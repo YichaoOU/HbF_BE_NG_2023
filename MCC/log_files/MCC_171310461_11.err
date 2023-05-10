@@ -1,0 +1,887 @@
+perl/5.10.1 is loaded
+Started analysis of 2488926_Hudep2_rep1_S2_R1_001.fastq.gz
+Approx 5% complete for 2488926_Hudep2_rep1_S2_R1_001.fastq.gz
+Approx 10% complete for 2488926_Hudep2_rep1_S2_R1_001.fastq.gz
+Approx 15% complete for 2488926_Hudep2_rep1_S2_R1_001.fastq.gz
+Approx 20% complete for 2488926_Hudep2_rep1_S2_R1_001.fastq.gz
+Approx 25% complete for 2488926_Hudep2_rep1_S2_R1_001.fastq.gz
+Approx 30% complete for 2488926_Hudep2_rep1_S2_R1_001.fastq.gz
+Approx 35% complete for 2488926_Hudep2_rep1_S2_R1_001.fastq.gz
+Approx 40% complete for 2488926_Hudep2_rep1_S2_R1_001.fastq.gz
+Approx 45% complete for 2488926_Hudep2_rep1_S2_R1_001.fastq.gz
+Approx 50% complete for 2488926_Hudep2_rep1_S2_R1_001.fastq.gz
+Approx 55% complete for 2488926_Hudep2_rep1_S2_R1_001.fastq.gz
+Approx 60% complete for 2488926_Hudep2_rep1_S2_R1_001.fastq.gz
+Approx 65% complete for 2488926_Hudep2_rep1_S2_R1_001.fastq.gz
+Approx 70% complete for 2488926_Hudep2_rep1_S2_R1_001.fastq.gz
+Approx 75% complete for 2488926_Hudep2_rep1_S2_R1_001.fastq.gz
+Approx 80% complete for 2488926_Hudep2_rep1_S2_R1_001.fastq.gz
+Approx 85% complete for 2488926_Hudep2_rep1_S2_R1_001.fastq.gz
+Approx 90% complete for 2488926_Hudep2_rep1_S2_R1_001.fastq.gz
+Approx 95% complete for 2488926_Hudep2_rep1_S2_R1_001.fastq.gz
+Started analysis of 2488926_Hudep2_rep1_S2_R2_001.fastq.gz
+Approx 5% complete for 2488926_Hudep2_rep1_S2_R2_001.fastq.gz
+Approx 10% complete for 2488926_Hudep2_rep1_S2_R2_001.fastq.gz
+Approx 15% complete for 2488926_Hudep2_rep1_S2_R2_001.fastq.gz
+Approx 20% complete for 2488926_Hudep2_rep1_S2_R2_001.fastq.gz
+Approx 25% complete for 2488926_Hudep2_rep1_S2_R2_001.fastq.gz
+Approx 30% complete for 2488926_Hudep2_rep1_S2_R2_001.fastq.gz
+Approx 35% complete for 2488926_Hudep2_rep1_S2_R2_001.fastq.gz
+Approx 40% complete for 2488926_Hudep2_rep1_S2_R2_001.fastq.gz
+Approx 45% complete for 2488926_Hudep2_rep1_S2_R2_001.fastq.gz
+Approx 50% complete for 2488926_Hudep2_rep1_S2_R2_001.fastq.gz
+Approx 55% complete for 2488926_Hudep2_rep1_S2_R2_001.fastq.gz
+Approx 60% complete for 2488926_Hudep2_rep1_S2_R2_001.fastq.gz
+Approx 65% complete for 2488926_Hudep2_rep1_S2_R2_001.fastq.gz
+Approx 70% complete for 2488926_Hudep2_rep1_S2_R2_001.fastq.gz
+Approx 75% complete for 2488926_Hudep2_rep1_S2_R2_001.fastq.gz
+Approx 80% complete for 2488926_Hudep2_rep1_S2_R2_001.fastq.gz
+Approx 85% complete for 2488926_Hudep2_rep1_S2_R2_001.fastq.gz
+Approx 90% complete for 2488926_Hudep2_rep1_S2_R2_001.fastq.gz
+Approx 95% complete for 2488926_Hudep2_rep1_S2_R2_001.fastq.gz
+Multicore support not enabled. Proceeding with single-core trimming.
+Path to Cutadapt set as: 'cutadapt' (default)
+Cutadapt seems to be working fine (tested command 'cutadapt --version')
+Cutadapt version: 1.14
+single-core operation.
+No quality encoding type selected. Assuming that the data provided uses Sanger encoded Phred scores (default)
+
+Using user-specified basename (>>HBG1_2_2488926_Hudep2_rep1<<) instead of deriving the filename from the input file(s)
+
+
+AUTO-DETECTING ADAPTER TYPE
+===========================
+Attempting to auto-detect adapter type from the first 1 million sequences of the first file (>> 2488926_Hudep2_rep1_S2_R1_001.fastq.gz <<)
+
+Found perfect matches for the following adapter sequences:
+Adapter type	Count	Sequence	Sequences analysed	Percentage
+Illumina	45488	AGATCGGAAGAGC	1000000	4.55
+Nextera	1	CTGTCTCTTATA	1000000	0.00
+smallRNA	0	TGGAATTCTCGG	1000000	0.00
+Using Illumina adapter for trimming (count: 45488). Second best hit was Nextera (count: 1)
+
+Writing report to '2488926_Hudep2_rep1_S2_R1_001.fastq.gz_trimming_report.txt'
+
+SUMMARISING RUN PARAMETERS
+==========================
+Input filename: 2488926_Hudep2_rep1_S2_R1_001.fastq.gz
+Trimming mode: paired-end
+Trim Galore version: 0.6.4_dev
+Cutadapt version: 1.14
+Number of cores used for trimming: 1
+Quality Phred score cutoff: 10
+Quality encoding type selected: ASCII+33
+Adapter sequence: 'AGATCGGAAGAGC' (Illumina TruSeq, Sanger iPCR; auto-detected)
+Maximum trimming error rate: 0.1 (default)
+Minimum required adapter overlap (stringency): 1 bp
+Minimum required sequence length for both reads before a sequence pair gets removed: 20 bp
+Running FastQC on the data once trimming has completed
+Output file(s) will be GZIP compressed
+
+Your version of Cutadapt is fairly old (detected v1.14), please consider updating Cutadapt!
+Writing final adapter and quality trimmed output to 2488926_Hudep2_rep1_S2_R1_001_trimmed.fq.gz
+
+
+  >>> Now performing quality (cutoff '-q 10') and adapter trimming in a single pass for the adapter sequence: 'AGATCGGAAGAGC' from file 2488926_Hudep2_rep1_S2_R1_001.fastq.gz <<< 
+10000000 sequences processed
+20000000 sequences processed
+30000000 sequences processed
+40000000 sequences processed
+50000000 sequences processed
+60000000 sequences processed
+70000000 sequences processed
+80000000 sequences processed
+90000000 sequences processed
+100000000 sequences processed
+110000000 sequences processed
+120000000 sequences processed
+130000000 sequences processed
+140000000 sequences processed
+150000000 sequences processed
+160000000 sequences processed
+This is cutadapt 1.14 with Python 2.7.13
+Command line parameters: -e 0.1 -q 10 -O 1 -a AGATCGGAAGAGC 2488926_Hudep2_rep1_S2_R1_001.fastq.gz
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 2120.84 s (13 us/read; 4.68 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:             165,329,922
+Reads with adapters:                61,784,411 (37.4%)
+Reads written (passing filters):   165,329,922 (100.0%)
+
+Total basepairs processed: 24,964,818,222 bp
+Quality-trimmed:                       0 bp (0.0%)
+Total written (filtered):  24,627,041,200 bp (98.6%)
+
+=== Adapter 1 ===
+
+Sequence: AGATCGGAAGAGC; Type: regular 3'; Length: 13; Trimmed: 61784411 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-13 bp: 1
+
+Bases preceding removed adapters:
+  A: 29.2%
+  C: 29.5%
+  G: 21.2%
+  T: 20.1%
+  none/other: 0.0%
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+1	31934700	41332480.5	0	31934700
+2	12789821	10333120.1	0	12789821
+3	3586441	2583280.0	0	3586441
+4	1177701	645820.0	0	1177701
+5	799102	161455.0	0	799102
+6	648437	40363.8	0	648437
+7	601188	10090.9	0	601188
+8	538156	2522.7	0	538156
+9	493987	630.7	0	491518 2469
+10	486527	157.7	1	461268 25259
+11	462008	39.4	1	437045 24963
+12	447098	9.9	1	425073 22025
+13	429507	2.5	1	407414 22093
+14	413289	2.5	1	391966 21323
+15	387164	2.5	1	368636 18528
+16	384213	2.5	1	365019 19194
+17	368186	2.5	1	349060 19126
+18	358667	2.5	1	338084 20583
+19	336117	2.5	1	319808 16309
+20	329943	2.5	1	310047 19896
+21	298755	2.5	1	284776 13979
+22	273198	2.5	1	260363 12835
+23	264219	2.5	1	251430 12789
+24	250258	2.5	1	238659 11599
+25	238434	2.5	1	227241 11193
+26	215363	2.5	1	205557 9806
+27	204006	2.5	1	194102 9904
+28	186887	2.5	1	178276 8611
+29	173891	2.5	1	165254 8637
+30	157950	2.5	1	149099 8851
+31	145703	2.5	1	138622 7081
+32	137929	2.5	1	131588 6341
+33	126640	2.5	1	120631 6009
+34	118317	2.5	1	113029 5288
+35	117034	2.5	1	111582 5452
+36	109477	2.5	1	104344 5133
+37	106114	2.5	1	101329 4785
+38	101119	2.5	1	96494 4625
+39	97068	2.5	1	92421 4647
+40	91657	2.5	1	87158 4499
+41	83924	2.5	1	80028 3896
+42	78943	2.5	1	75174 3769
+43	75416	2.5	1	71452 3964
+44	68458	2.5	1	65114 3344
+45	66795	2.5	1	63492 3303
+46	61057	2.5	1	58048 3009
+47	60676	2.5	1	57631 3045
+48	54175	2.5	1	51498 2677
+49	49994	2.5	1	47527 2467
+50	44247	2.5	1	42105 2142
+51	41714	2.5	1	39482 2232
+52	39498	2.5	1	37366 2132
+53	35896	2.5	1	33889 2007
+54	33739	2.5	1	31861 1878
+55	31470	2.5	1	29786 1684
+56	28831	2.5	1	27162 1669
+57	29092	2.5	1	27326 1766
+58	26509	2.5	1	24893 1616
+59	23893	2.5	1	22388 1505
+60	23165	2.5	1	21658 1507
+61	22221	2.5	1	20704 1517
+62	20565	2.5	1	19132 1433
+63	18802	2.5	1	17354 1448
+64	16457	2.5	1	15330 1127
+65	15659	2.5	1	14567 1092
+66	14045	2.5	1	12918 1127
+67	13771	2.5	1	12637 1134
+68	13656	2.5	1	12524 1132
+69	12338	2.5	1	11227 1111
+70	11302	2.5	1	10253 1049
+71	11356	2.5	1	10128 1228
+72	10452	2.5	1	9305 1147
+73	9930	2.5	1	8779 1151
+74	9302	2.5	1	8250 1052
+75	9090	2.5	1	7831 1259
+76	8545	2.5	1	7555 990
+77	7638	2.5	1	6661 977
+78	7976	2.5	1	6743 1233
+79	7878	2.5	1	6652 1226
+80	7204	2.5	1	5952 1252
+81	6810	2.5	1	5710 1100
+82	6651	2.5	1	5321 1330
+83	6419	2.5	1	5044 1375
+84	5779	2.5	1	4825 954
+85	6544	2.5	1	4829 1715
+86	5404	2.5	1	4437 967
+87	5182	2.5	1	4109 1073
+88	5393	2.5	1	4228 1165
+89	5184	2.5	1	4208 976
+90	5193	2.5	1	4154 1039
+91	5356	2.5	1	3908 1448
+92	4870	2.5	1	3462 1408
+93	5799	2.5	1	3621 2178
+94	4170	2.5	1	3287 883
+95	4062	2.5	1	3149 913
+96	4325	2.5	1	3108 1217
+97	4041	2.5	1	3239 802
+98	4178	2.5	1	3110 1068
+99	4334	2.5	1	2871 1463
+100	3703	2.5	1	2887 816
+101	3862	2.5	1	2778 1084
+102	3345	2.5	1	2599 746
+103	3522	2.5	1	2560 962
+104	4341	2.5	1	2555 1786
+105	3175	2.5	1	2406 769
+106	4325	2.5	1	2461 1864
+107	3308	2.5	1	2458 850
+108	3111	2.5	1	2350 761
+109	3115	2.5	1	2370 745
+110	3226	2.5	1	2393 833
+111	2838	2.5	1	2129 709
+112	2760	2.5	1	1978 782
+113	3116	2.5	1	2351 765
+114	2911	2.5	1	2159 752
+115	3042	2.5	1	2250 792
+116	2811	2.5	1	2048 763
+117	2578	2.5	1	1963 615
+118	2505	2.5	1	1869 636
+119	2511	2.5	1	1813 698
+120	2400	2.5	1	1732 668
+121	2380	2.5	1	1773 607
+122	2048	2.5	1	1511 537
+123	1965	2.5	1	1464 501
+124	1798	2.5	1	1324 474
+125	1793	2.5	1	1335 458
+126	2169	2.5	1	1421 748
+127	1454	2.5	1	1062 392
+128	1273	2.5	1	987 286
+129	1403	2.5	1	1094 309
+130	1150	2.5	1	873 277
+131	1110	2.5	1	736 374
+132	790	2.5	1	608 182
+133	716	2.5	1	556 160
+134	688	2.5	1	468 220
+135	511	2.5	1	417 94
+136	466	2.5	1	384 82
+137	374	2.5	1	278 96
+138	252	2.5	1	177 75
+139	236	2.5	1	163 73
+140	197	2.5	1	108 89
+141	180	2.5	1	80 100
+142	66	2.5	1	27 39
+143	78	2.5	1	13 65
+144	94	2.5	1	8 86
+145	46	2.5	1	6 40
+146	93	2.5	1	7 86
+147	228	2.5	1	5 223
+148	77	2.5	1	0 77
+149	67	2.5	1	5 62
+150	48	2.5	1	0 48
+151	2512	2.5	1	0 2512
+
+
+RUN STATISTICS FOR INPUT FILE: 2488926_Hudep2_rep1_S2_R1_001.fastq.gz
+=============================================
+165329922 sequences processed in total
+The length threshold of paired-end sequences gets evaluated later on (in the validation step)
+
+Writing report to '2488926_Hudep2_rep1_S2_R2_001.fastq.gz_trimming_report.txt'
+
+SUMMARISING RUN PARAMETERS
+==========================
+Input filename: 2488926_Hudep2_rep1_S2_R2_001.fastq.gz
+Trimming mode: paired-end
+Trim Galore version: 0.6.4_dev
+Cutadapt version: 1.14
+Number of cores used for trimming: 
+Quality Phred score cutoff: 10
+Quality encoding type selected: ASCII+33
+Adapter sequence: 'AGATCGGAAGAGC' (Illumina TruSeq, Sanger iPCR; auto-detected)
+Maximum trimming error rate: 0.1 (default)
+Minimum required adapter overlap (stringency): 1 bp
+Minimum required sequence length for both reads before a sequence pair gets removed: 20 bp
+Running FastQC on the data once trimming has completed
+Output file(s) will be GZIP compressed
+
+Argument "" isn't numeric in numeric gt (>) at /home/yli11/HemTools/bin/trim_galore line 617.
+Your version of Cutadapt is fairly old (detected v1.14), please consider updating Cutadapt!
+Writing final adapter and quality trimmed output to 2488926_Hudep2_rep1_S2_R2_001_trimmed.fq.gz
+
+
+  >>> Now performing quality (cutoff '-q 10') and adapter trimming in a single pass for the adapter sequence: 'AGATCGGAAGAGC' from file 2488926_Hudep2_rep1_S2_R2_001.fastq.gz <<< 
+10000000 sequences processed
+20000000 sequences processed
+30000000 sequences processed
+40000000 sequences processed
+50000000 sequences processed
+60000000 sequences processed
+70000000 sequences processed
+80000000 sequences processed
+90000000 sequences processed
+100000000 sequences processed
+110000000 sequences processed
+120000000 sequences processed
+130000000 sequences processed
+140000000 sequences processed
+150000000 sequences processed
+160000000 sequences processed
+This is cutadapt 1.14 with Python 2.7.13
+Command line parameters: -e 0.1 -q 10 -O 1 -a AGATCGGAAGAGC 2488926_Hudep2_rep1_S2_R2_001.fastq.gz
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 2103.55 s (13 us/read; 4.72 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:             165,329,922
+Reads with adapters:                61,545,855 (37.2%)
+Reads written (passing filters):   165,329,922 (100.0%)
+
+Total basepairs processed: 24,964,818,222 bp
+Quality-trimmed:                     924 bp (0.0%)
+Total written (filtered):  24,622,114,835 bp (98.6%)
+
+=== Adapter 1 ===
+
+Sequence: AGATCGGAAGAGC; Type: regular 3'; Length: 13; Trimmed: 61545855 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-13 bp: 1
+
+Bases preceding removed adapters:
+  A: 29.2%
+  C: 29.2%
+  G: 20.5%
+  T: 21.1%
+  none/other: 0.0%
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+1	31687142	41332480.5	0	31687142
+2	12671179	10333120.1	0	12671179
+3	3544388	2583280.0	0	3544388
+4	1183344	645820.0	0	1183344
+5	810933	161455.0	0	810933
+6	660595	40363.8	0	660595
+7	610947	10090.9	0	610947
+8	546729	2522.7	0	546729
+9	497763	630.7	0	494585 3178
+10	488831	157.7	1	466644 22187
+11	468049	39.4	1	439065 28984
+12	449892	9.9	1	428819 21073
+13	432294	2.5	1	411150 21144
+14	416415	2.5	1	395254 21161
+15	389277	2.5	1	371083 18194
+16	387324	2.5	1	368527 18797
+17	371332	2.5	1	351750 19582
+18	364010	2.5	1	340131 23879
+19	337525	2.5	1	322479 15046
+20	337954	2.5	1	313602 24352
+21	300448	2.5	1	287205 13243
+22	274337	2.5	1	262189 12148
+23	266265	2.5	1	254638 11627
+24	252089	2.5	1	241332 10757
+25	240431	2.5	1	229541 10890
+26	216621	2.5	1	207236 9385
+27	206174	2.5	1	196325 9849
+28	188411	2.5	1	180379 8032
+29	176187	2.5	1	167089 9098
+30	163478	2.5	1	151224 12254
+31	146936	2.5	1	140156 6780
+32	139171	2.5	1	132919 6252
+33	127588	2.5	1	122109 5479
+34	118961	2.5	1	113803 5158
+35	117803	2.5	1	112771 5032
+36	110346	2.5	1	105635 4711
+37	106939	2.5	1	102036 4903
+38	102090	2.5	1	97637 4453
+39	97851	2.5	1	93632 4219
+40	92388	2.5	1	88531 3857
+41	84746	2.5	1	80892 3854
+42	79669	2.5	1	75871 3798
+43	76383	2.5	1	72426 3957
+44	69179	2.5	1	65908 3271
+45	67575	2.5	1	64301 3274
+46	61784	2.5	1	58777 3007
+47	61136	2.5	1	58416 2720
+48	54885	2.5	1	52099 2786
+49	50557	2.5	1	48194 2363
+50	44993	2.5	1	42776 2217
+51	42299	2.5	1	39980 2319
+52	39967	2.5	1	37946 2021
+53	36346	2.5	1	34438 1908
+54	34154	2.5	1	32265 1889
+55	32045	2.5	1	30339 1706
+56	29374	2.5	1	27728 1646
+57	29639	2.5	1	27919 1720
+58	26997	2.5	1	25256 1741
+59	24572	2.5	1	23085 1487
+60	23650	2.5	1	22180 1470
+61	22712	2.5	1	21220 1492
+62	21086	2.5	1	19607 1479
+63	19343	2.5	1	17842 1501
+64	17015	2.5	1	15656 1359
+65	16241	2.5	1	14927 1314
+66	14549	2.5	1	13352 1197
+67	14312	2.5	1	13092 1220
+68	14379	2.5	1	13118 1261
+69	12966	2.5	1	11733 1233
+70	11961	2.5	1	10802 1159
+71	11903	2.5	1	10643 1260
+72	11015	2.5	1	9840 1175
+73	10604	2.5	1	9425 1179
+74	9951	2.5	1	8777 1174
+75	9556	2.5	1	8356 1200
+76	9158	2.5	1	8026 1132
+77	8275	2.5	1	7205 1070
+78	8566	2.5	1	7248 1318
+79	8453	2.5	1	7163 1290
+80	7695	2.5	1	6442 1253
+81	7479	2.5	1	6260 1219
+82	7151	2.5	1	5969 1182
+83	6890	2.5	1	5650 1240
+84	6422	2.5	1	5323 1099
+85	6776	2.5	1	5368 1408
+86	6106	2.5	1	5002 1104
+87	5824	2.5	1	4681 1143
+88	5993	2.5	1	4805 1188
+89	5907	2.5	1	4748 1159
+90	5804	2.5	1	4638 1166
+91	5910	2.5	1	4570 1340
+92	5273	2.5	1	4088 1185
+93	5782	2.5	1	4177 1605
+94	4841	2.5	1	3816 1025
+95	4705	2.5	1	3705 1000
+96	4883	2.5	1	3776 1107
+97	4907	2.5	1	3832 1075
+98	4885	2.5	1	3780 1105
+99	4770	2.5	1	3489 1281
+100	4567	2.5	1	3566 1001
+101	4558	2.5	1	3409 1149
+102	4179	2.5	1	3223 956
+103	4108	2.5	1	3167 941
+104	4542	2.5	1	3164 1378
+105	3951	2.5	1	3045 906
+106	4492	2.5	1	3113 1379
+107	4043	2.5	1	3103 940
+108	3928	2.5	1	3000 928
+109	3853	2.5	1	2922 931
+110	3789	2.5	1	2920 869
+111	3436	2.5	1	2635 801
+112	3302	2.5	1	2486 816
+113	3728	2.5	1	2889 839
+114	3500	2.5	1	2651 849
+115	3636	2.5	1	2779 857
+116	3451	2.5	1	2595 856
+117	3192	2.5	1	2462 730
+118	3048	2.5	1	2325 723
+119	2979	2.5	1	2280 699
+120	2852	2.5	1	2155 697
+121	2911	2.5	1	2239 672
+122	2489	2.5	1	1879 610
+123	2359	2.5	1	1811 548
+124	2161	2.5	1	1641 520
+125	2204	2.5	1	1673 531
+126	2289	2.5	1	1686 603
+127	1597	2.5	1	1261 336
+128	1425	2.5	1	1138 287
+129	1580	2.5	1	1229 351
+130	1192	2.5	1	936 256
+131	1043	2.5	1	805 238
+132	824	2.5	1	650 174
+133	701	2.5	1	582 119
+134	668	2.5	1	509 159
+135	511	2.5	1	446 65
+136	471	2.5	1	403 68
+137	366	2.5	1	283 83
+138	253	2.5	1	193 60
+139	219	2.5	1	169 50
+140	157	2.5	1	116 41
+141	128	2.5	1	76 52
+142	106	2.5	1	32 74
+143	61	2.5	1	14 47
+144	48	2.5	1	8 40
+145	55	2.5	1	6 49
+146	38	2.5	1	7 31
+147	133	2.5	1	3 130
+148	64	2.5	1	0 64
+149	49	2.5	1	7 42
+150	67	2.5	1	0 67
+151	117	2.5	1	1 116
+
+
+RUN STATISTICS FOR INPUT FILE: 2488926_Hudep2_rep1_S2_R2_001.fastq.gz
+=============================================
+165329922 sequences processed in total
+The length threshold of paired-end sequences gets evaluated later on (in the validation step)
+
+Validate paired-end files 2488926_Hudep2_rep1_S2_R1_001_trimmed.fq.gz and 2488926_Hudep2_rep1_S2_R2_001_trimmed.fq.gz
+Now renaming the output files
+
+ORIGINAL FILE 1: >>2488926_Hudep2_rep1_S2_R1_001_trimmed.fq.gz<<	RENAMING TO:>>HBG1_2_2488926_Hudep2_rep1_R1_trimmed.fq.gz<<
+ORIGINAL FILE 2: >>2488926_Hudep2_rep1_S2_R2_001_trimmed.fq.gz<<	RENAMING TO:>>HBG1_2_2488926_Hudep2_rep1_R2_trimmed.fq.gz<<
+file_1: HBG1_2_2488926_Hudep2_rep1_R1_trimmed.fq.gz, file_2: HBG1_2_2488926_Hudep2_rep1_R2_trimmed.fq.gz
+
+
+>>>>> Now validing the length of the 2 paired-end infiles: HBG1_2_2488926_Hudep2_rep1_R1_trimmed.fq.gz and HBG1_2_2488926_Hudep2_rep1_R2_trimmed.fq.gz <<<<<
+Renaming the output files (AGAIN).
+Writing validated paired-end Read 1 reads to HBG1_2_2488926_Hudep2_rep1_val_1.fq.gz
+Writing validated paired-end Read 2 reads to HBG1_2_2488926_Hudep2_rep1_val_2.fq.gz
+
+Total number of sequences analysed: 165329922
+
+Number of sequence pairs removed because at least one read was shorter than the length cutoff (20 bp): 9147 (0.01%)
+
+
+  >>> Now running FastQC on the validated data HBG1_2_2488926_Hudep2_rep1_val_1.fq.gz<<<
+
+Started analysis of HBG1_2_2488926_Hudep2_rep1_val_1.fq.gz
+Approx 5% complete for HBG1_2_2488926_Hudep2_rep1_val_1.fq.gz
+Approx 10% complete for HBG1_2_2488926_Hudep2_rep1_val_1.fq.gz
+Approx 15% complete for HBG1_2_2488926_Hudep2_rep1_val_1.fq.gz
+Approx 20% complete for HBG1_2_2488926_Hudep2_rep1_val_1.fq.gz
+Approx 25% complete for HBG1_2_2488926_Hudep2_rep1_val_1.fq.gz
+Approx 30% complete for HBG1_2_2488926_Hudep2_rep1_val_1.fq.gz
+Approx 35% complete for HBG1_2_2488926_Hudep2_rep1_val_1.fq.gz
+Approx 40% complete for HBG1_2_2488926_Hudep2_rep1_val_1.fq.gz
+Approx 45% complete for HBG1_2_2488926_Hudep2_rep1_val_1.fq.gz
+Approx 50% complete for HBG1_2_2488926_Hudep2_rep1_val_1.fq.gz
+Approx 55% complete for HBG1_2_2488926_Hudep2_rep1_val_1.fq.gz
+Approx 60% complete for HBG1_2_2488926_Hudep2_rep1_val_1.fq.gz
+Approx 65% complete for HBG1_2_2488926_Hudep2_rep1_val_1.fq.gz
+Approx 70% complete for HBG1_2_2488926_Hudep2_rep1_val_1.fq.gz
+Approx 75% complete for HBG1_2_2488926_Hudep2_rep1_val_1.fq.gz
+Approx 80% complete for HBG1_2_2488926_Hudep2_rep1_val_1.fq.gz
+Approx 85% complete for HBG1_2_2488926_Hudep2_rep1_val_1.fq.gz
+Approx 90% complete for HBG1_2_2488926_Hudep2_rep1_val_1.fq.gz
+Approx 95% complete for HBG1_2_2488926_Hudep2_rep1_val_1.fq.gz
+
+  >>> Now running FastQC on the validated data HBG1_2_2488926_Hudep2_rep1_val_2.fq.gz<<<
+
+Started analysis of HBG1_2_2488926_Hudep2_rep1_val_2.fq.gz
+Approx 5% complete for HBG1_2_2488926_Hudep2_rep1_val_2.fq.gz
+Approx 10% complete for HBG1_2_2488926_Hudep2_rep1_val_2.fq.gz
+Approx 15% complete for HBG1_2_2488926_Hudep2_rep1_val_2.fq.gz
+Approx 20% complete for HBG1_2_2488926_Hudep2_rep1_val_2.fq.gz
+Approx 25% complete for HBG1_2_2488926_Hudep2_rep1_val_2.fq.gz
+Approx 30% complete for HBG1_2_2488926_Hudep2_rep1_val_2.fq.gz
+Approx 35% complete for HBG1_2_2488926_Hudep2_rep1_val_2.fq.gz
+Approx 40% complete for HBG1_2_2488926_Hudep2_rep1_val_2.fq.gz
+Approx 45% complete for HBG1_2_2488926_Hudep2_rep1_val_2.fq.gz
+Approx 50% complete for HBG1_2_2488926_Hudep2_rep1_val_2.fq.gz
+Approx 55% complete for HBG1_2_2488926_Hudep2_rep1_val_2.fq.gz
+Approx 60% complete for HBG1_2_2488926_Hudep2_rep1_val_2.fq.gz
+Approx 65% complete for HBG1_2_2488926_Hudep2_rep1_val_2.fq.gz
+Approx 70% complete for HBG1_2_2488926_Hudep2_rep1_val_2.fq.gz
+Approx 75% complete for HBG1_2_2488926_Hudep2_rep1_val_2.fq.gz
+Approx 80% complete for HBG1_2_2488926_Hudep2_rep1_val_2.fq.gz
+Approx 85% complete for HBG1_2_2488926_Hudep2_rep1_val_2.fq.gz
+Approx 90% complete for HBG1_2_2488926_Hudep2_rep1_val_2.fq.gz
+Approx 95% complete for HBG1_2_2488926_Hudep2_rep1_val_2.fq.gz
+Deleting both intermediate output files HBG1_2_2488926_Hudep2_rep1_R1_trimmed.fq.gz and HBG1_2_2488926_Hudep2_rep1_R2_trimmed.fq.gz
+
+====================================================================================================
+
+654819 reads; of these:
+  654819 (100.00%) were unpaired; of these:
+    3128 (0.48%) aligned 0 times
+    18008 (2.75%) aligned exactly 1 time
+    633683 (96.77%) aligned >1 times
+99.52% overall alignment rate
+
+The following have been reloaded with a version change:
+  1) ucsc/041619 => ucsc/121917
+
+HBG1-promoter-bait1_HBG1_2_2488926_Hudep2_rep1_de_norm_repWARNING_NOT_NORM_UNDEF.wig is empty of data
+HBG1-promoter-bait1_HBG1_2_2488926_Hudep2_rep1_de_norm_repWARNING_NOT_NORM_UNDEF couldn't bigwig hg19 files
+mv: cannot stat ‘HBG1-promoter-bait1_HBG1_2_2488926_Hudep2_rep1_de_norm_repWARNING_NOT_NORM_UNDEF.bw’: No such file or directory
+
+The following have been reloaded with a version change:
+  1) ucsc/041619 => ucsc/121917
+
+HBG1-promoter-bait1_HBG1_2_2488926_Hudep2_rep1_ALL_FP.wig is empty of data
+HBG1-promoter-bait1_HBG1_2_2488926_Hudep2_rep1_ALL_FP couldn't bigwig hg19 files
+mv: cannot stat ‘HBG1-promoter-bait1_HBG1_2_2488926_Hudep2_rep1_ALL_FP.bw’: No such file or directory
+
+The following have been reloaded with a version change:
+  1) ucsc/041619 => ucsc/121917
+
+HBG1-promoter-bait1_HBG1_2_2488926_Hudep2_rep1_UP_FP.wig is empty of data
+HBG1-promoter-bait1_HBG1_2_2488926_Hudep2_rep1_UP_FP couldn't bigwig hg19 files
+mv: cannot stat ‘HBG1-promoter-bait1_HBG1_2_2488926_Hudep2_rep1_UP_FP.bw’: No such file or directory
+
+The following have been reloaded with a version change:
+  1) ucsc/041619 => ucsc/121917
+
+HBG1-promoter-bait1_HBG1_2_2488926_Hudep2_rep1_DO_FP.wig is empty of data
+HBG1-promoter-bait1_HBG1_2_2488926_Hudep2_rep1_DO_FP couldn't bigwig hg19 files
+mv: cannot stat ‘HBG1-promoter-bait1_HBG1_2_2488926_Hudep2_rep1_DO_FP.bw’: No such file or directory
+INFO  @ Wed, 19 Oct 2022 12:36:47: 
+# Command line: callpeak -t HBG1-promoter-bait1_HBG1_2_2488926_Hudep2_rep1.sorted.bam -f BAM --nomodel --extsize 100 -n HBG1-promoter-bait1_HBG1_2_2488926_Hudep2_rep1
+# ARGUMENTS LIST:
+# name = HBG1-promoter-bait1_HBG1_2_2488926_Hudep2_rep1
+# format = BAM
+# ChIP-seq file = ['HBG1-promoter-bait1_HBG1_2_2488926_Hudep2_rep1.sorted.bam']
+# control file = None
+# effective genome size = 2.70e+09
+# band width = 300
+# model fold = [5, 50]
+# qvalue cutoff = 5.00e-02
+# Larger dataset will be scaled towards smaller dataset.
+# Range for calculating regional lambda is: 10000 bps
+# Broad region calling is off
+# Paired-End mode is off
+ 
+INFO  @ Wed, 19 Oct 2022 12:36:47: #1 read tag files... 
+INFO  @ Wed, 19 Oct 2022 12:36:47: #1 read treatment tags... 
+INFO  @ Wed, 19 Oct 2022 12:36:50: #1 tag size is determined as 120 bps 
+INFO  @ Wed, 19 Oct 2022 12:36:50: #1 tag size = 120 
+INFO  @ Wed, 19 Oct 2022 12:36:50: #1  total tags in treatment: 651691 
+INFO  @ Wed, 19 Oct 2022 12:36:50: #1 user defined the maximum tags... 
+INFO  @ Wed, 19 Oct 2022 12:36:50: #1 filter out redundant tags at the same location and the same strand by allowing at most 1 tag(s) 
+INFO  @ Wed, 19 Oct 2022 12:36:50: #1  tags after filtering in treatment: 3068 
+INFO  @ Wed, 19 Oct 2022 12:36:50: #1  Redundant rate of treatment: 1.00 
+INFO  @ Wed, 19 Oct 2022 12:36:50: #1 finished! 
+INFO  @ Wed, 19 Oct 2022 12:36:50: #2 Build Peak Model... 
+INFO  @ Wed, 19 Oct 2022 12:36:50: #2 Skipped... 
+INFO  @ Wed, 19 Oct 2022 12:36:50: #2 Use 100 as fragment length 
+INFO  @ Wed, 19 Oct 2022 12:36:50: #3 Call peaks... 
+INFO  @ Wed, 19 Oct 2022 12:36:50: #3 Pre-compute pvalue-qvalue table... 
+INFO  @ Wed, 19 Oct 2022 12:36:50: #3 Call peaks for each chromosome... 
+INFO  @ Wed, 19 Oct 2022 12:36:50: #4 Write output xls file... HBG1-promoter-bait1_HBG1_2_2488926_Hudep2_rep1_peaks.xls 
+INFO  @ Wed, 19 Oct 2022 12:36:50: #4 Write peak in narrowPeak format file... HBG1-promoter-bait1_HBG1_2_2488926_Hudep2_rep1_peaks.narrowPeak 
+INFO  @ Wed, 19 Oct 2022 12:36:50: #4 Write summits bed file... HBG1-promoter-bait1_HBG1_2_2488926_Hudep2_rep1_summits.bed 
+INFO  @ Wed, 19 Oct 2022 12:36:50: Done! 
+needLargeMem: trying to allocate 0 bytes (limit: 100000000000)
+15565632 reads; of these:
+  15565632 (100.00%) were unpaired; of these:
+    78578 (0.50%) aligned 0 times
+    854179 (5.49%) aligned exactly 1 time
+    14632875 (94.01%) aligned >1 times
+99.50% overall alignment rate
+[bam_sort_core] merging from 8 files and 1 in-memory blocks...
+[bam_sort_core] merging from 8 files and 1 in-memory blocks...
+
+The following have been reloaded with a version change:
+  1) ucsc/041619 => ucsc/121917
+
+mv: ‘HBG2-promoter-bait1_HBG1_2_2488926_Hudep2_rep1_de_norm_rep.bw’ and ‘./HBG2-promoter-bait1_HBG1_2_2488926_Hudep2_rep1_de_norm_rep.bw’ are the same file
+
+The following have been reloaded with a version change:
+  1) ucsc/041619 => ucsc/121917
+
+mv: ‘HBG2-promoter-bait1_HBG1_2_2488926_Hudep2_rep1_ALL_FP.bw’ and ‘./HBG2-promoter-bait1_HBG1_2_2488926_Hudep2_rep1_ALL_FP.bw’ are the same file
+
+The following have been reloaded with a version change:
+  1) ucsc/041619 => ucsc/121917
+
+mv: ‘HBG2-promoter-bait1_HBG1_2_2488926_Hudep2_rep1_UP_FP.bw’ and ‘./HBG2-promoter-bait1_HBG1_2_2488926_Hudep2_rep1_UP_FP.bw’ are the same file
+
+The following have been reloaded with a version change:
+  1) ucsc/041619 => ucsc/121917
+
+mv: ‘HBG2-promoter-bait1_HBG1_2_2488926_Hudep2_rep1_DO_FP.bw’ and ‘./HBG2-promoter-bait1_HBG1_2_2488926_Hudep2_rep1_DO_FP.bw’ are the same file
+INFO  @ Wed, 19 Oct 2022 13:28:31: 
+# Command line: callpeak -t HBG2-promoter-bait1_HBG1_2_2488926_Hudep2_rep1.sorted.bam -f BAM --nomodel --extsize 100 -n HBG2-promoter-bait1_HBG1_2_2488926_Hudep2_rep1
+# ARGUMENTS LIST:
+# name = HBG2-promoter-bait1_HBG1_2_2488926_Hudep2_rep1
+# format = BAM
+# ChIP-seq file = ['HBG2-promoter-bait1_HBG1_2_2488926_Hudep2_rep1.sorted.bam']
+# control file = None
+# effective genome size = 2.70e+09
+# band width = 300
+# model fold = [5, 50]
+# qvalue cutoff = 5.00e-02
+# Larger dataset will be scaled towards smaller dataset.
+# Range for calculating regional lambda is: 10000 bps
+# Broad region calling is off
+# Paired-End mode is off
+ 
+INFO  @ Wed, 19 Oct 2022 13:28:31: #1 read tag files... 
+INFO  @ Wed, 19 Oct 2022 13:28:31: #1 read treatment tags... 
+INFO  @ Wed, 19 Oct 2022 13:28:35:  1000000 
+INFO  @ Wed, 19 Oct 2022 13:28:39:  2000000 
+INFO  @ Wed, 19 Oct 2022 13:28:43:  3000000 
+INFO  @ Wed, 19 Oct 2022 13:28:48:  4000000 
+INFO  @ Wed, 19 Oct 2022 13:28:52:  5000000 
+INFO  @ Wed, 19 Oct 2022 13:28:56:  6000000 
+INFO  @ Wed, 19 Oct 2022 13:29:01:  7000000 
+INFO  @ Wed, 19 Oct 2022 13:29:05:  8000000 
+INFO  @ Wed, 19 Oct 2022 13:29:09:  9000000 
+INFO  @ Wed, 19 Oct 2022 13:29:13:  10000000 
+INFO  @ Wed, 19 Oct 2022 13:29:18:  11000000 
+INFO  @ Wed, 19 Oct 2022 13:29:22:  12000000 
+INFO  @ Wed, 19 Oct 2022 13:29:26:  13000000 
+INFO  @ Wed, 19 Oct 2022 13:29:31:  14000000 
+INFO  @ Wed, 19 Oct 2022 13:29:35:  15000000 
+INFO  @ Wed, 19 Oct 2022 13:29:37: #1 tag size is determined as 112 bps 
+INFO  @ Wed, 19 Oct 2022 13:29:37: #1 tag size = 112 
+INFO  @ Wed, 19 Oct 2022 13:29:37: #1  total tags in treatment: 15487054 
+INFO  @ Wed, 19 Oct 2022 13:29:37: #1 user defined the maximum tags... 
+INFO  @ Wed, 19 Oct 2022 13:29:37: #1 filter out redundant tags at the same location and the same strand by allowing at most 1 tag(s) 
+INFO  @ Wed, 19 Oct 2022 13:29:37: #1  tags after filtering in treatment: 106724 
+INFO  @ Wed, 19 Oct 2022 13:29:37: #1  Redundant rate of treatment: 0.99 
+INFO  @ Wed, 19 Oct 2022 13:29:37: #1 finished! 
+INFO  @ Wed, 19 Oct 2022 13:29:37: #2 Build Peak Model... 
+INFO  @ Wed, 19 Oct 2022 13:29:37: #2 Skipped... 
+INFO  @ Wed, 19 Oct 2022 13:29:37: #2 Use 100 as fragment length 
+INFO  @ Wed, 19 Oct 2022 13:29:37: #3 Call peaks... 
+INFO  @ Wed, 19 Oct 2022 13:29:37: #3 Pre-compute pvalue-qvalue table... 
+INFO  @ Wed, 19 Oct 2022 13:29:38: #3 Call peaks for each chromosome... 
+INFO  @ Wed, 19 Oct 2022 13:29:38: #4 Write output xls file... HBG2-promoter-bait1_HBG1_2_2488926_Hudep2_rep1_peaks.xls 
+INFO  @ Wed, 19 Oct 2022 13:29:38: #4 Write peak in narrowPeak format file... HBG2-promoter-bait1_HBG1_2_2488926_Hudep2_rep1_peaks.narrowPeak 
+INFO  @ Wed, 19 Oct 2022 13:29:38: #4 Write summits bed file... HBG2-promoter-bait1_HBG1_2_2488926_Hudep2_rep1_summits.bed 
+INFO  @ Wed, 19 Oct 2022 13:29:38: Done! 
+2957 reads; of these:
+  2957 (100.00%) were unpaired; of these:
+    174 (5.88%) aligned 0 times
+    427 (14.44%) aligned exactly 1 time
+    2356 (79.68%) aligned >1 times
+94.12% overall alignment rate
+
+The following have been reloaded with a version change:
+  1) ucsc/041619 => ucsc/121917
+
+mv: ‘HBG1-promoter-bait2_HBG1_2_2488926_Hudep2_rep1_de_norm_rep.bw’ and ‘./HBG1-promoter-bait2_HBG1_2_2488926_Hudep2_rep1_de_norm_rep.bw’ are the same file
+
+The following have been reloaded with a version change:
+  1) ucsc/041619 => ucsc/121917
+
+mv: ‘HBG1-promoter-bait2_HBG1_2_2488926_Hudep2_rep1_ALL_FP.bw’ and ‘./HBG1-promoter-bait2_HBG1_2_2488926_Hudep2_rep1_ALL_FP.bw’ are the same file
+
+The following have been reloaded with a version change:
+  1) ucsc/041619 => ucsc/121917
+
+mv: ‘HBG1-promoter-bait2_HBG1_2_2488926_Hudep2_rep1_UP_FP.bw’ and ‘./HBG1-promoter-bait2_HBG1_2_2488926_Hudep2_rep1_UP_FP.bw’ are the same file
+
+The following have been reloaded with a version change:
+  1) ucsc/041619 => ucsc/121917
+
+mv: ‘HBG1-promoter-bait2_HBG1_2_2488926_Hudep2_rep1_DO_FP.bw’ and ‘./HBG1-promoter-bait2_HBG1_2_2488926_Hudep2_rep1_DO_FP.bw’ are the same file
+INFO  @ Wed, 19 Oct 2022 13:30:19: 
+# Command line: callpeak -t HBG1-promoter-bait2_HBG1_2_2488926_Hudep2_rep1.sorted.bam -f BAM --nomodel --extsize 100 -n HBG1-promoter-bait2_HBG1_2_2488926_Hudep2_rep1
+# ARGUMENTS LIST:
+# name = HBG1-promoter-bait2_HBG1_2_2488926_Hudep2_rep1
+# format = BAM
+# ChIP-seq file = ['HBG1-promoter-bait2_HBG1_2_2488926_Hudep2_rep1.sorted.bam']
+# control file = None
+# effective genome size = 2.70e+09
+# band width = 300
+# model fold = [5, 50]
+# qvalue cutoff = 5.00e-02
+# Larger dataset will be scaled towards smaller dataset.
+# Range for calculating regional lambda is: 10000 bps
+# Broad region calling is off
+# Paired-End mode is off
+ 
+INFO  @ Wed, 19 Oct 2022 13:30:19: #1 read tag files... 
+INFO  @ Wed, 19 Oct 2022 13:30:19: #1 read treatment tags... 
+INFO  @ Wed, 19 Oct 2022 13:30:19: #1 tag size is determined as 74 bps 
+INFO  @ Wed, 19 Oct 2022 13:30:19: #1 tag size = 74 
+INFO  @ Wed, 19 Oct 2022 13:30:19: #1  total tags in treatment: 2783 
+INFO  @ Wed, 19 Oct 2022 13:30:19: #1 user defined the maximum tags... 
+INFO  @ Wed, 19 Oct 2022 13:30:19: #1 filter out redundant tags at the same location and the same strand by allowing at most 1 tag(s) 
+INFO  @ Wed, 19 Oct 2022 13:30:19: #1  tags after filtering in treatment: 554 
+INFO  @ Wed, 19 Oct 2022 13:30:19: #1  Redundant rate of treatment: 0.80 
+INFO  @ Wed, 19 Oct 2022 13:30:19: #1 finished! 
+INFO  @ Wed, 19 Oct 2022 13:30:19: #2 Build Peak Model... 
+INFO  @ Wed, 19 Oct 2022 13:30:19: #2 Skipped... 
+INFO  @ Wed, 19 Oct 2022 13:30:19: #2 Use 100 as fragment length 
+INFO  @ Wed, 19 Oct 2022 13:30:19: #3 Call peaks... 
+INFO  @ Wed, 19 Oct 2022 13:30:19: #3 Pre-compute pvalue-qvalue table... 
+INFO  @ Wed, 19 Oct 2022 13:30:19: #3 Call peaks for each chromosome... 
+INFO  @ Wed, 19 Oct 2022 13:30:19: #4 Write output xls file... HBG1-promoter-bait2_HBG1_2_2488926_Hudep2_rep1_peaks.xls 
+INFO  @ Wed, 19 Oct 2022 13:30:19: #4 Write peak in narrowPeak format file... HBG1-promoter-bait2_HBG1_2_2488926_Hudep2_rep1_peaks.narrowPeak 
+INFO  @ Wed, 19 Oct 2022 13:30:19: #4 Write summits bed file... HBG1-promoter-bait2_HBG1_2_2488926_Hudep2_rep1_summits.bed 
+INFO  @ Wed, 19 Oct 2022 13:30:19: Done! 
+1473725 reads; of these:
+  1473725 (100.00%) were unpaired; of these:
+    8196 (0.56%) aligned 0 times
+    45820 (3.11%) aligned exactly 1 time
+    1419709 (96.33%) aligned >1 times
+99.44% overall alignment rate
+
+The following have been reloaded with a version change:
+  1) ucsc/041619 => ucsc/121917
+
+mv: ‘HBG2-promoter-bait2_HBG1_2_2488926_Hudep2_rep1_de_norm_rep.bw’ and ‘./HBG2-promoter-bait2_HBG1_2_2488926_Hudep2_rep1_de_norm_rep.bw’ are the same file
+
+The following have been reloaded with a version change:
+  1) ucsc/041619 => ucsc/121917
+
+mv: ‘HBG2-promoter-bait2_HBG1_2_2488926_Hudep2_rep1_ALL_FP.bw’ and ‘./HBG2-promoter-bait2_HBG1_2_2488926_Hudep2_rep1_ALL_FP.bw’ are the same file
+
+The following have been reloaded with a version change:
+  1) ucsc/041619 => ucsc/121917
+
+mv: ‘HBG2-promoter-bait2_HBG1_2_2488926_Hudep2_rep1_UP_FP.bw’ and ‘./HBG2-promoter-bait2_HBG1_2_2488926_Hudep2_rep1_UP_FP.bw’ are the same file
+
+The following have been reloaded with a version change:
+  1) ucsc/041619 => ucsc/121917
+
+mv: ‘HBG2-promoter-bait2_HBG1_2_2488926_Hudep2_rep1_DO_FP.bw’ and ‘./HBG2-promoter-bait2_HBG1_2_2488926_Hudep2_rep1_DO_FP.bw’ are the same file
+INFO  @ Wed, 19 Oct 2022 13:34:34: 
+# Command line: callpeak -t HBG2-promoter-bait2_HBG1_2_2488926_Hudep2_rep1.sorted.bam -f BAM --nomodel --extsize 100 -n HBG2-promoter-bait2_HBG1_2_2488926_Hudep2_rep1
+# ARGUMENTS LIST:
+# name = HBG2-promoter-bait2_HBG1_2_2488926_Hudep2_rep1
+# format = BAM
+# ChIP-seq file = ['HBG2-promoter-bait2_HBG1_2_2488926_Hudep2_rep1.sorted.bam']
+# control file = None
+# effective genome size = 2.70e+09
+# band width = 300
+# model fold = [5, 50]
+# qvalue cutoff = 5.00e-02
+# Larger dataset will be scaled towards smaller dataset.
+# Range for calculating regional lambda is: 10000 bps
+# Broad region calling is off
+# Paired-End mode is off
+ 
+INFO  @ Wed, 19 Oct 2022 13:34:34: #1 read tag files... 
+INFO  @ Wed, 19 Oct 2022 13:34:34: #1 read treatment tags... 
+INFO  @ Wed, 19 Oct 2022 13:34:38:  1000000 
+INFO  @ Wed, 19 Oct 2022 13:34:41: #1 tag size is determined as 107 bps 
+INFO  @ Wed, 19 Oct 2022 13:34:41: #1 tag size = 107 
+INFO  @ Wed, 19 Oct 2022 13:34:41: #1  total tags in treatment: 1465529 
+INFO  @ Wed, 19 Oct 2022 13:34:41: #1 user defined the maximum tags... 
+INFO  @ Wed, 19 Oct 2022 13:34:41: #1 filter out redundant tags at the same location and the same strand by allowing at most 1 tag(s) 
+INFO  @ Wed, 19 Oct 2022 13:34:41: #1  tags after filtering in treatment: 8397 
+INFO  @ Wed, 19 Oct 2022 13:34:41: #1  Redundant rate of treatment: 0.99 
+INFO  @ Wed, 19 Oct 2022 13:34:41: #1 finished! 
+INFO  @ Wed, 19 Oct 2022 13:34:41: #2 Build Peak Model... 
+INFO  @ Wed, 19 Oct 2022 13:34:41: #2 Skipped... 
+INFO  @ Wed, 19 Oct 2022 13:34:41: #2 Use 100 as fragment length 
+INFO  @ Wed, 19 Oct 2022 13:34:41: #3 Call peaks... 
+INFO  @ Wed, 19 Oct 2022 13:34:41: #3 Pre-compute pvalue-qvalue table... 
+INFO  @ Wed, 19 Oct 2022 13:34:41: #3 Call peaks for each chromosome... 
+INFO  @ Wed, 19 Oct 2022 13:34:41: #4 Write output xls file... HBG2-promoter-bait2_HBG1_2_2488926_Hudep2_rep1_peaks.xls 
+INFO  @ Wed, 19 Oct 2022 13:34:41: #4 Write peak in narrowPeak format file... HBG2-promoter-bait2_HBG1_2_2488926_Hudep2_rep1_peaks.narrowPeak 
+INFO  @ Wed, 19 Oct 2022 13:34:41: #4 Write summits bed file... HBG2-promoter-bait2_HBG1_2_2488926_Hudep2_rep1_summits.bed 
+INFO  @ Wed, 19 Oct 2022 13:34:41: Done! 
+
+The following have been reloaded with a version change:
+  1) samtools/1.7 => samtools/1.15.1
+
+[bam_sort_core] merging from 10 files and 1 in-memory blocks...
+
+The following have been reloaded with a version change:
+  1) ucsc/041619 => ucsc/121917
+
+mv: ‘HBG1_2_2488926_Hudep2_rep1_merged_de_norm_rep.bw’ and ‘./HBG1_2_2488926_Hudep2_rep1_merged_de_norm_rep.bw’ are the same file
+
+The following have been reloaded with a version change:
+  1) ucsc/041619 => ucsc/121917
+
+mv: ‘HBG1_2_2488926_Hudep2_rep1_merged_ALL_FP.bw’ and ‘./HBG1_2_2488926_Hudep2_rep1_merged_ALL_FP.bw’ are the same file
+
+The following have been reloaded with a version change:
+  1) ucsc/041619 => ucsc/121917
+
+mv: ‘HBG1_2_2488926_Hudep2_rep1_merged_UP_FP.bw’ and ‘./HBG1_2_2488926_Hudep2_rep1_merged_UP_FP.bw’ are the same file
+
+The following have been reloaded with a version change:
+  1) ucsc/041619 => ucsc/121917
+
+mv: ‘HBG1_2_2488926_Hudep2_rep1_merged_DO_FP.bw’ and ‘./HBG1_2_2488926_Hudep2_rep1_merged_DO_FP.bw’ are the same file
+mv: cannot stat ‘HBG1_2_2488926_Hudep2_rep1_read_split’: No such file or directory

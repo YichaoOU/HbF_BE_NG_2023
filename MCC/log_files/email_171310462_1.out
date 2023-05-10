@@ -1,0 +1,101 @@
+a
+b
+c
+
+
+
+|         searching | ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 31/31  
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@noderome140>
+Subject: Job 171310462[1]: <email[1-1]> in cluster <hpcf_research_cluster> Done
+
+Job <email[1-1]> was submitted from host <noderome102> by user <yli11> in cluster <hpcf_research_cluster> at Tue Oct 18 15:08:48 2022
+Job was executed on host(s) <noderome140>, in queue <standard>, as user <yli11> in cluster <hpcf_research_cluster> at Wed Oct 19 19:24:36 2022
+</home/yli11> was used as the home directory.
+</home/yli11/dirs/weissgrp_283065_MCC> was used as the working directory.
+Started at Wed Oct 19 19:24:36 2022
+Terminated at Wed Oct 19 19:26:11 2022
+Results reported at Wed Oct 19 19:26:11 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+
+
+#BSUB -P MicroC_yli
+#BSUB -o MicroC_yli11_2022-10-18/log_files/email_%J_%I.out -e MicroC_yli11_2022-10-18/log_files/email_%J_%I.err
+#BSUB -n 1
+#BSUB -q standard
+#BSUB -R "span[hosts=1] rusage[mem=100000]"
+#BSUB -J "email[1-1]"
+
+#BSUB -w "ended(171310461)"
+
+module purge
+
+id=$LSB_JOBINDEX
+COL1=`head -n $id /research/rgs01/home/clusterHome/yli11/HemTools/utils/../share/misc/sample.tsv|tail -n1|awk -F "	" '{print $1}'`
+COL2=`head -n $id /research/rgs01/home/clusterHome/yli11/HemTools/utils/../share/misc/sample.tsv|tail -n1|awk -F "	" '{print $2}'`
+COL3=`head -n $id /research/rgs01/home/clusterHome/yli11/HemTools/utils/../share/misc/sample.tsv|tail -n1|awk -F "	" '{print $3}'`
+COL4=`head -n $id /research/rgs01/home/clusterHome/yli11/HemTools/utils/../share/misc/sample.tsv|tail -n1|awk -F "	" '{print $4}'`
+COL5=`head -n $id /research/rgs01/home/clusterHome/yli11/HemTools/utils/../share/misc/sample.tsv|tail -n1|awk -F "	" '{print $5}'`
+COL6=`head -n $id /research/rgs01/home/clusterHome/yli11/HemTools/utils/../share/misc/sample.tsv|tail -n1|awk -F "	" '{print $6}'`
+COL7=`head -n $id /research/rgs01/home/clusterHome/yli11/HemTools/utils/../share/misc/sample.tsv|tail -n1|awk -F "	" '{print $7}'`
+COL8=`head -n $id /research/rgs01/home/clusterHome/yli11/HemTools/utils/../share/misc/sample.tsv|tail -n1|awk -F "	" '{print $8}'`
+COL9=`head -n $id /research/rgs01/home/clusterHome/yli11/HemTools/utils/../share/misc/sample.tsv|tail -n1|awk -F "	" '{print $9}'`
+LINE=`head -n $id /research/rgs01/home/clusterHome/yli11/HemTools/utils/../share/misc/sample.tsv|tail -n1`
+
+echo ${COL1}
+echo ${COL2}
+echo ${COL3}
+echo ${COL4}
+echo ${COL5}
+echo ${COL6}
+
+ncore=1
+mem=100000
+q=standard
+mv *fastqc.zip MicroC_yli11_2022-10-18
+mv *fastqc.html MicroC_yli11_2022-10-18
+mv *trimming_report.txt MicroC_yli11_2022-10-18
+cd MicroC_yli11_2022-10-18
+module load conda3/202011
+source activate /home/yli11/.conda/envs/captureC
+module load texlive/20190410
+export XDG_RUNTIME_DIR=""
+mkdir /scratch_space/yli11/$$
+export JUPYTER_RUNTIME_DIR=/scratch_space/yli11/$$
+src=/home/yli11/Programs/Micro-Capture-C
+cp $src/MicroC_report_summary.ipynb .
+jupyter nbconvert --to notebook --execute MicroC_report_summary.ipynb --output MicroC_report_summary --ExecutePreprocessor.timeout=-1 --allow-errors
+jupyter nbconvert MicroC_report_summary.ipynb --to html
+source activate /home/yli11/.conda/envs/multiQC/
+
+(... more ...)
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   15.02 sec.
+    Max Memory :                                 117 MB
+    Average Memory :                             44.50 MB
+    Total Requested Memory :                     100000.00 MB
+    Delta Memory :                               99883.00 MB
+    Max Swap :                                   -
+    Max Processes :                              11
+    Max Threads :                                68
+    Run time :                                   95 sec.
+    Turnaround time :                            101843 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <MicroC_yli11_2022-10-18/log_files/email_171310462_1.err> for stderr output of this job.
+

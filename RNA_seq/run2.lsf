@@ -1,0 +1,10 @@
+=cut AI 1
+
+inputFile=input
+mem=30000
+
+module load python/2.7.13
+
+python ~/HemTools/share/script/tabulate_reads_AtoI-stranded.py ${COL1} 
+
+

@@ -1,0 +1,95 @@
+2515864_DOE16_4_S105_L002_R1_001.fastq.gz
+2515864_DOE16_4_S105_L002_R2_001.fastq.gz
+2515864_DOE16_4_S105_L002
+
+
+
+Jan 09 10:16:02 ..... started STAR run
+Jan 09 10:16:02 ..... loading genome
+Jan 09 10:20:18 ..... started 1st pass mapping
+Jan 09 10:29:35 ..... finished 1st pass mapping
+Jan 09 10:29:36 ..... inserting junctions into the genome indices
+Jan 09 10:31:27 ..... started mapping
+Jan 09 10:47:28 ..... started sorting BAM
+Jan 09 10:51:27 ..... finished successfully
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@noderome152>
+Subject: Job 179055958[22]: <STAR[1-24]> in cluster <hpcf_research_cluster> Done
+
+Job <STAR[1-24]> was submitted from host <noderome134> by user <yli11> in cluster <hpcf_research_cluster> at Mon Jan  9 09:57:37 2023
+Job was executed on host(s) <4*noderome152>, in queue <standard>, as user <yli11> in cluster <hpcf_research_cluster> at Mon Jan  9 10:16:01 2023
+</home/yli11> was used as the home directory.
+</home/yli11/dirs/Sequencing_runs/weissgrp_286772_RNAseq_total_stranded> was used as the working directory.
+Started at Mon Jan  9 10:16:01 2023
+Terminated at Mon Jan  9 10:51:29 2023
+Results reported at Mon Jan  9 10:51:29 2023
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+
+
+#BSUB -P rna_seq_va
+#BSUB -o rna_seq_variant_call_yli11_2023-01-09/log_files/STAR_%J_%I.out -e rna_seq_variant_call_yli11_2023-01-09/log_files/STAR_%J_%I.err
+#BSUB -n 4
+#BSUB -q standard
+#BSUB -R "span[hosts=1] rusage[mem=20000]"
+#BSUB -J "STAR[1-24]"
+
+#BSUB -w "ended(179055956[*])"
+
+module purge
+
+id=$LSB_JOBINDEX
+COL1=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $1}'`
+COL2=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $2}'`
+COL3=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $3}'`
+COL4=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $4}'`
+COL5=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $5}'`
+COL6=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $6}'`
+COL7=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $7}'`
+COL8=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $8}'`
+COL9=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $9}'`
+LINE=`head -n $id fastq.tsv|tail -n1`
+
+echo ${COL1}
+echo ${COL2}
+echo ${COL3}
+echo ${COL4}
+echo ${COL5}
+echo ${COL6}
+
+module load star/2.5.3a
+ncore=4
+mem=20000
+cd rna_seq_variant_call_yli11_2023-01-09
+STAR --twopassMode Basic --genomeDir /research/dept/hem/common/sequencing/chenggrp/pipelines/hg19/hg19_star_253a_index/ --readFilesIn ${COL3}_val_1.fq ${COL3}_val_2.fq --runThreadN $ncore --outFileNamePrefix ${COL3} --outSAMtype BAM SortedByCoordinate --outFilterMultimapNmax 20 --alignSJoverhangMin 8 --alignSJDBoverhangMin 1 --outFilterMismatchNmax 999 --outFilterMismatchNoverReadLmax 0.04 --alignIntronMin 20 --alignIntronMax 1000000 --alignMatesGapMax 1000000 --outSAMattributes Standard --sjdbScore 1
+
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   5796.39 sec.
+    Max Memory :                                 32940 MB
+    Average Memory :                             25408.22 MB
+    Total Requested Memory :                     80000.00 MB
+    Delta Memory :                               47060.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                11
+    Run time :                                   2126 sec.
+    Turnaround time :                            3232 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <rna_seq_variant_call_yli11_2023-01-09/log_files/STAR_179055958_22.err> for stderr output of this job.
+

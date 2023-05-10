@@ -1,0 +1,151 @@
+perl/5.10.1 is loaded
+Skipping 'q2488930_Hudep2_175_rep2_S6_R1_001.fastq.gz' which didn't exist, or couldn't be read
+Started analysis of 2488930_Hudep2_175_rep2_S6_R2_001.fastq.gz
+Approx 5% complete for 2488930_Hudep2_175_rep2_S6_R2_001.fastq.gz
+Approx 10% complete for 2488930_Hudep2_175_rep2_S6_R2_001.fastq.gz
+Approx 15% complete for 2488930_Hudep2_175_rep2_S6_R2_001.fastq.gz
+Approx 20% complete for 2488930_Hudep2_175_rep2_S6_R2_001.fastq.gz
+Approx 25% complete for 2488930_Hudep2_175_rep2_S6_R2_001.fastq.gz
+Approx 30% complete for 2488930_Hudep2_175_rep2_S6_R2_001.fastq.gz
+Approx 35% complete for 2488930_Hudep2_175_rep2_S6_R2_001.fastq.gz
+Approx 40% complete for 2488930_Hudep2_175_rep2_S6_R2_001.fastq.gz
+Approx 45% complete for 2488930_Hudep2_175_rep2_S6_R2_001.fastq.gz
+Approx 50% complete for 2488930_Hudep2_175_rep2_S6_R2_001.fastq.gz
+Approx 55% complete for 2488930_Hudep2_175_rep2_S6_R2_001.fastq.gz
+Approx 60% complete for 2488930_Hudep2_175_rep2_S6_R2_001.fastq.gz
+Approx 65% complete for 2488930_Hudep2_175_rep2_S6_R2_001.fastq.gz
+Approx 70% complete for 2488930_Hudep2_175_rep2_S6_R2_001.fastq.gz
+Approx 75% complete for 2488930_Hudep2_175_rep2_S6_R2_001.fastq.gz
+Approx 80% complete for 2488930_Hudep2_175_rep2_S6_R2_001.fastq.gz
+Approx 85% complete for 2488930_Hudep2_175_rep2_S6_R2_001.fastq.gz
+Approx 90% complete for 2488930_Hudep2_175_rep2_S6_R2_001.fastq.gz
+Approx 95% complete for 2488930_Hudep2_175_rep2_S6_R2_001.fastq.gz
+Multicore support not enabled. Proceeding with single-core trimming.
+Path to Cutadapt set as: 'cutadapt' (default)
+Cutadapt seems to be working fine (tested command 'cutadapt --version')
+Cutadapt version: 1.14
+single-core operation.
+No quality encoding type selected. Assuming that the data provided uses Sanger encoded Phred scores (default)
+
+Using user-specified basename (>>HS3_2488930_Hudep2_175_rep2<<) instead of deriving the filename from the input file(s)
+gzip: q2488930_Hudep2_175_rep2_S6_R1_001.fastq.gz: No such file or directory
+Input file 'q2488930_Hudep2_175_rep2_S6_R1_001.fastq.gz' seems to be completely empty. Consider respecifying!
+
+sed: can't read HS3_2488930_Hudep2_175_rep2.extendedFrags.fastq: No such file or directory
+End of file reading 4 bytes
+Cannot open input fastq file HS3_2488930_Hudep2_175_rep2.extendedFrags.fastq
+Warning: Could not open read file "HS3-bait1_HS3_2488930_Hudep2_175_rep2.extendedFrags.fastq" for reading; skipping...
+Error: No input read files were valid
+(ERR): bowtie2-align exited with value 1
+[E::hts_open_format] Failed to open file HS3-bait1_HS3_2488930_Hudep2_175_rep2.sam
+samtools view: failed to open "HS3-bait1_HS3_2488930_Hudep2_175_rep2.sam" for reading: No such file or directory
+[E::hts_open_format] Failed to open file HS3-bait1_HS3_2488930_Hudep2_175_rep2.bam
+samtools sort: can't open "HS3-bait1_HS3_2488930_Hudep2_175_rep2.bam": No such file or directory
+[E::hts_open_format] Failed to open file HS3-bait1_HS3_2488930_Hudep2_175_rep2.sorted.bam
+samtools index: failed to open "HS3-bait1_HS3_2488930_Hudep2_175_rep2.sorted.bam": No such file or directory
+Failed to open BAM file HS3-bait1_HS3_2488930_Hudep2_175_rep2.sorted.bam
+needLargeMem: trying to allocate 0 bytes (limit: 100000000000)
+[E::hts_open_format] Failed to open file HS3-bait1_HS3_2488930_Hudep2_175_rep2.sam
+samtools sort: can't open "HS3-bait1_HS3_2488930_Hudep2_175_rep2.sam": No such file or directory
+mv: cannot stat ‘HS3-bait1_HS3_2488930_Hudep2_175_rep2_sort.sam’: No such file or directory
+INFO  @ Tue, 18 Oct 2022 15:44:01: 
+# Command line: callpeak -t HS3-bait1_HS3_2488930_Hudep2_175_rep2.sorted.bam -f BAM --nomodel --extsize 100 -n HS3-bait1_HS3_2488930_Hudep2_175_rep2
+# ARGUMENTS LIST:
+# name = HS3-bait1_HS3_2488930_Hudep2_175_rep2
+# format = BAM
+# ChIP-seq file = ['HS3-bait1_HS3_2488930_Hudep2_175_rep2.sorted.bam']
+# control file = None
+# effective genome size = 2.70e+09
+# band width = 300
+# model fold = [5, 50]
+# qvalue cutoff = 5.00e-02
+# Larger dataset will be scaled towards smaller dataset.
+# Range for calculating regional lambda is: 10000 bps
+# Broad region calling is off
+# Paired-End mode is off
+ 
+INFO  @ Tue, 18 Oct 2022 15:44:01: #1 read tag files... 
+INFO  @ Tue, 18 Oct 2022 15:44:01: #1 read treatment tags... 
+Traceback (most recent call last):
+  File "/hpcf/apps/python/install/2.7.5/bin/macs2", line 4, in <module>
+    __import__('pkg_resources').run_script('MACS2==2.1.1.20160309', 'macs2')
+  File "/hpcf/apps/python/install/2.7.5/lib/python2.7/site-packages/pkg_resources/__init__.py", line 738, in run_script
+    self.require(requires)[0].run_script(script_name, ns)
+  File "/hpcf/apps/python/install/2.7.5/lib/python2.7/site-packages/pkg_resources/__init__.py", line 1506, in run_script
+    exec(script_code, namespace, namespace)
+  File "/hpcf/apps/python/install/2.7.5/lib/python2.7/site-packages/MACS2-2.1.1.20160309-py2.7-linux-x86_64.egg/EGG-INFO/scripts/macs2", line 617, in <module>
+    
+  File "/hpcf/apps/python/install/2.7.5/lib/python2.7/site-packages/MACS2-2.1.1.20160309-py2.7-linux-x86_64.egg/EGG-INFO/scripts/macs2", line 57, in main
+    
+  File "build/bdist.linux-x86_64/egg/MACS2/callpeak_cmd.py", line 73, in run
+  File "build/bdist.linux-x86_64/egg/MACS2/callpeak_cmd.py", line 395, in load_tag_files_options
+  File "MACS2/IO/Parser.pyx", line 774, in MACS2.IO.Parser.BAMParser.__init__ (MACS2/IO/Parser.c:11146)
+  File "/hpcf/apps/python/install/2.7.5/lib/python2.7/gzip.py", line 34, in open
+    return GzipFile(filename, mode, compresslevel)
+  File "/hpcf/apps/python/install/2.7.5/lib/python2.7/gzip.py", line 94, in __init__
+    fileobj = self.myfileobj = __builtin__.open(filename, mode or 'rb')
+IOError: [Errno 2] No such file or directory: 'HS3-bait1_HS3_2488930_Hudep2_175_rep2.sorted.bam'
+needLargeMem: trying to allocate 0 bytes (limit: 100000000000)
+Warning: Could not open read file "HS3-bait2_HS3_2488930_Hudep2_175_rep2.extendedFrags.fastq" for reading; skipping...
+Error: No input read files were valid
+(ERR): bowtie2-align exited with value 1
+[E::hts_open_format] Failed to open file HS3-bait2_HS3_2488930_Hudep2_175_rep2.sam
+samtools view: failed to open "HS3-bait2_HS3_2488930_Hudep2_175_rep2.sam" for reading: No such file or directory
+[E::hts_open_format] Failed to open file HS3-bait2_HS3_2488930_Hudep2_175_rep2.bam
+samtools sort: can't open "HS3-bait2_HS3_2488930_Hudep2_175_rep2.bam": No such file or directory
+[E::hts_open_format] Failed to open file HS3-bait2_HS3_2488930_Hudep2_175_rep2.sorted.bam
+samtools index: failed to open "HS3-bait2_HS3_2488930_Hudep2_175_rep2.sorted.bam": No such file or directory
+Failed to open BAM file HS3-bait2_HS3_2488930_Hudep2_175_rep2.sorted.bam
+needLargeMem: trying to allocate 0 bytes (limit: 100000000000)
+[E::hts_open_format] Failed to open file HS3-bait2_HS3_2488930_Hudep2_175_rep2.sam
+samtools sort: can't open "HS3-bait2_HS3_2488930_Hudep2_175_rep2.sam": No such file or directory
+mv: cannot stat ‘HS3-bait2_HS3_2488930_Hudep2_175_rep2_sort.sam’: No such file or directory
+INFO  @ Tue, 18 Oct 2022 15:44:03: 
+# Command line: callpeak -t HS3-bait2_HS3_2488930_Hudep2_175_rep2.sorted.bam -f BAM --nomodel --extsize 100 -n HS3-bait2_HS3_2488930_Hudep2_175_rep2
+# ARGUMENTS LIST:
+# name = HS3-bait2_HS3_2488930_Hudep2_175_rep2
+# format = BAM
+# ChIP-seq file = ['HS3-bait2_HS3_2488930_Hudep2_175_rep2.sorted.bam']
+# control file = None
+# effective genome size = 2.70e+09
+# band width = 300
+# model fold = [5, 50]
+# qvalue cutoff = 5.00e-02
+# Larger dataset will be scaled towards smaller dataset.
+# Range for calculating regional lambda is: 10000 bps
+# Broad region calling is off
+# Paired-End mode is off
+ 
+INFO  @ Tue, 18 Oct 2022 15:44:03: #1 read tag files... 
+INFO  @ Tue, 18 Oct 2022 15:44:03: #1 read treatment tags... 
+Traceback (most recent call last):
+  File "/hpcf/apps/python/install/2.7.5/bin/macs2", line 4, in <module>
+    __import__('pkg_resources').run_script('MACS2==2.1.1.20160309', 'macs2')
+  File "/hpcf/apps/python/install/2.7.5/lib/python2.7/site-packages/pkg_resources/__init__.py", line 738, in run_script
+    self.require(requires)[0].run_script(script_name, ns)
+  File "/hpcf/apps/python/install/2.7.5/lib/python2.7/site-packages/pkg_resources/__init__.py", line 1506, in run_script
+    exec(script_code, namespace, namespace)
+  File "/hpcf/apps/python/install/2.7.5/lib/python2.7/site-packages/MACS2-2.1.1.20160309-py2.7-linux-x86_64.egg/EGG-INFO/scripts/macs2", line 617, in <module>
+    
+  File "/hpcf/apps/python/install/2.7.5/lib/python2.7/site-packages/MACS2-2.1.1.20160309-py2.7-linux-x86_64.egg/EGG-INFO/scripts/macs2", line 57, in main
+    
+  File "build/bdist.linux-x86_64/egg/MACS2/callpeak_cmd.py", line 73, in run
+  File "build/bdist.linux-x86_64/egg/MACS2/callpeak_cmd.py", line 395, in load_tag_files_options
+  File "MACS2/IO/Parser.pyx", line 774, in MACS2.IO.Parser.BAMParser.__init__ (MACS2/IO/Parser.c:11146)
+  File "/hpcf/apps/python/install/2.7.5/lib/python2.7/gzip.py", line 34, in open
+    return GzipFile(filename, mode, compresslevel)
+  File "/hpcf/apps/python/install/2.7.5/lib/python2.7/gzip.py", line 94, in __init__
+    fileobj = self.myfileobj = __builtin__.open(filename, mode or 'rb')
+IOError: [Errno 2] No such file or directory: 'HS3-bait2_HS3_2488930_Hudep2_175_rep2.sorted.bam'
+needLargeMem: trying to allocate 0 bytes (limit: 100000000000)
+
+The following have been reloaded with a version change:
+  1) samtools/1.7 => samtools/1.15.1
+
+[E::hts_open_format] Failed to open file "*HS3_2488930_Hudep2_175_rep2*sorted.bam" : No such file or directory
+samtools merge: fail to open "*HS3_2488930_Hudep2_175_rep2*sorted.bam": No such file or directory
+[E::hts_open_format] Failed to open file "HS3_2488930_Hudep2_175_rep2_merged.bam" : No such file or directory
+samtools index: failed to open "HS3_2488930_Hudep2_175_rep2_merged.bam": No such file or directory
+[E::hts_open_format] Failed to open file "../HS3_2488930_Hudep2_175_rep2_merged.bam" : No such file or directory
+samtools sort: can't open "../HS3_2488930_Hudep2_175_rep2_merged.bam": No such file or directory
+mv: cannot stat ‘HS3_2488930_Hudep2_175_rep2_read_split’: No such file or directory

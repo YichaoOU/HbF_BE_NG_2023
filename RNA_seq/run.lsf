@@ -1,0 +1,11 @@
+=cut REDI 1
+
+inputFile=input
+ncore=20
+mem=4000
+
+module load python/2.7.13
+
+python ~/HemTools/share/script/REDItoolDnaRna.py -t 20 -i ${COL1} -d -D -f /home/yli11/Data/Human/hg19/fasta/Homo_sapiens.add_chr.GRCh37.dna.primary_assembly.fa -G ~/Data/Human/hg19/annotations/gencode.v30lift37.annotation.st.gtf.gz -o ${COL1}_REDItool_results
+ 
+

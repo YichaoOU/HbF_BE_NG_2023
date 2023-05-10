@@ -1,0 +1,199 @@
+Number of query regions: 82585
+Number of assigned query regions by Exon: 12330
+Number of assigned query regions by Promoter: 23064
+Number of assigned query regions by 5UTR: 4842
+Number of assigned query regions by 3UTR: 2387
+Number of assigned query regions by Intron: 57143
+  query_chr  query_start  ...          Intron_gene Genomic_features
+0      chr1        27563  ...  ENSG00000227232.5_3         Promoter
+1      chr1        28060  ...  ENSG00000227232.5_3         Promoter
+2      chr1        30749  ...  ENSG00000243485.5_6         Promoter
+3      chr1        31362  ...                    .         Promoter
+4      chr1        32315  ...                    .       Intergenic
+
+[5 rows x 14 columns]
+These categories are not found: 5UTR, 3UTR
+DrT_sample3_GATA1_S17.bam
+DrT_sample3_GATA1_S17.vs.Hudep2_IgG_rbt_S7_peaks.rmblck.narrowPeak
+
+
+                        Name  FRIP_CHIP
+0  DrT_sample3_GATA1_S17.bam   0.507237
+Number of query regions: 76493
+Number of assigned query regions by Exon: 11845
+Number of assigned query regions by Promoter: 21884
+Number of assigned query regions by 5UTR: 4758
+Number of assigned query regions by 3UTR: 2297
+Number of assigned query regions by Intron: 53945
+  query_chr  query_start  ...          Intron_gene Genomic_features
+0      chr1        53172  ...                    .             Exon
+1      chr1        57121  ...                    .         Promoter
+2      chr1        85080  ...                    .       Intergenic
+3      chr1        85623  ...                    .       Intergenic
+4      chr1       101648  ...  ENSG00000238009.6_9           Intron
+
+[5 rows x 14 columns]
+These categories are not found: 5UTR, 3UTR
+DrT_sample3_GATA1_S17.rmdup.uq.rmchrM.bam
+DrT_sample3_GATA1_S17.vs.Hudep2_IgG_rbt_S7.rmdup.uq.rmchrM_peaks.rmblck.narrowPeak
+
+
+                                        Name  FRIP_CHIP
+0  DrT_sample3_GATA1_S17.rmdup.uq.rmchrM.bam   0.516606
+Number of query regions: 81689
+Number of assigned query regions by Exon: 12410
+Number of assigned query regions by Promoter: 23116
+Number of assigned query regions by 5UTR: 4891
+Number of assigned query regions by 3UTR: 2391
+Number of assigned query regions by Intron: 56671
+  query_chr  query_start  ...          Intron_gene Genomic_features
+0      chr1        27563  ...  ENSG00000227232.5_3         Promoter
+1      chr1        28060  ...  ENSG00000227232.5_3         Promoter
+2      chr1        30749  ...  ENSG00000243485.5_6         Promoter
+3      chr1        31362  ...                    .         Promoter
+4      chr1        32315  ...                    .       Intergenic
+
+[5 rows x 14 columns]
+These categories are not found: 5UTR, 3UTR
+DrT_sample3_GATA1_S17.rmdup.bam
+DrT_sample3_GATA1_S17.vs.Hudep2_IgG_rbt_S7.rmdup_peaks.rmblck.narrowPeak
+
+
+                              Name  FRIP_CHIP
+0  DrT_sample3_GATA1_S17.rmdup.bam     0.5075
+Number of query regions: 78123
+Number of assigned query regions by Exon: 11870
+Number of assigned query regions by Promoter: 22072
+Number of assigned query regions by 5UTR: 4758
+Number of assigned query regions by 3UTR: 2311
+Number of assigned query regions by Intron: 54888
+  query_chr  query_start  query_end  ... 3UTR_gene  Intron_gene  Genomic_features
+0      chr1        53172      53409  ...         .            .              Exon
+1      chr1        56608      56751  ...         .            .          Promoter
+2      chr1        57121      57260  ...         .            .          Promoter
+3      chr1        85080      85344  ...         .            .        Intergenic
+4      chr1        85623      85769  ...         .            .        Intergenic
+
+[5 rows x 14 columns]
+These categories are not found: 5UTR, 3UTR
+DrT_sample3_GATA1_S17.markdup.uq.bam
+DrT_sample3_GATA1_S17.vs.Hudep2_IgG_rbt_S7.markdup.uq_peaks.rmblck.narrowPeak
+
+
+                                   Name  FRIP_CHIP
+0  DrT_sample3_GATA1_S17.markdup.uq.bam   0.528966
+Calling enriched regions with control file
+Normalizing control to experimental bedgraph
+Using relaxed threshold
+Creating experimental AUC file: Tue Jan 18 15:24:38 CST 2022
+Creating control AUC file: Tue Jan 18 15:24:38 CST 2022
+Calculating optimal AUC threshold: Tue Jan 18 15:24:38 CST 2022
+Calculating threshold using normalized control: Tue Jan 18 15:24:38 CST 2022
+Calling enriched regions with control file
+Normalizing control to experimental bedgraph
+Using relaxed threshold
+Creating experimental AUC file: Tue Jan 18 15:24:38 CST 2022
+Creating control AUC file: Tue Jan 18 15:24:48 CST 2022
+Calculating optimal AUC threshold: Tue Jan 18 15:25:06 CST 2022
+Calculating threshold using normalized control: Tue Jan 18 15:25:06 CST 2022
+Calling enriched regions with control file
+Normalizing control to experimental bedgraph
+Using relaxed threshold
+Creating experimental AUC file: Tue Jan 18 15:25:06 CST 2022
+Creating control AUC file: Tue Jan 18 15:25:15 CST 2022
+Calculating optimal AUC threshold: Tue Jan 18 15:25:32 CST 2022
+Calculating threshold using normalized control: Tue Jan 18 15:25:32 CST 2022
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@noderome134>
+Subject: Job 146946523[1]: <macs2[1-20]> in cluster <hpcf_research_cluster> Exited
+
+Job <macs2[1-20]> was submitted from host <noderome147> by user <rfeng> in cluster <hpcf_research_cluster> at Tue Jan 18 13:18:52 2022
+Job was executed on host(s) <noderome134>, in queue <standard>, as user <rfeng> in cluster <hpcf_research_cluster> at Tue Jan 18 14:11:40 2022
+</home/rfeng> was used as the home directory.
+</research/dept/hem/common/sequencing/chenggrp/Ruopeng_CUTRUN/011422_CUTRUN/DrT> was used as the working directory.
+Started at Tue Jan 18 14:11:40 2022
+Terminated at Tue Jan 18 15:25:33 2022
+Results reported at Tue Jan 18 15:25:33 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+
+
+#BSUB -P cut_run
+#BSUB -o cut_run_rfeng_2022-01-18.macs2.message_%J_%I.out -e cut_run_rfeng_2022-01-18.macs2.message_%J_%I.err
+#BSUB -n 1
+#BSUB -q standard
+#BSUB -R "span[hosts=1] rusage[mem=80000]"
+#BSUB -J "macs2[1-20]"
+module purge
+#BSUB -w "ended(146946518)"
+module load samtools/1.10
+module load bedtools/2.29.2
+module load conda3
+source activate /home/yli11/.conda/envs/py2
+module load gcc/6.3.0
+export PATH=$PATH:"/home/yli11/HemTools/bin"
+module load R/3.5.1
+
+id=$LSB_JOBINDEX
+COL1=`head -n $id peakcall.tsv|tail -n1|awk -F "	" '{print $1}'`
+COL2=`head -n $id peakcall.tsv|tail -n1|awk -F "	" '{print $2}'`
+COL3=`head -n $id peakcall.tsv|tail -n1|awk -F "	" '{print $3}'`
+COL4=`head -n $id peakcall.tsv|tail -n1|awk -F "	" '{print $4}'`
+COL5=`head -n $id peakcall.tsv|tail -n1|awk -F "	" '{print $5}'`
+COL6=`head -n $id peakcall.tsv|tail -n1|awk -F "	" '{print $6}'`
+LINE=`head -n $id peakcall.tsv|tail -n1`
+
+module load conda3
+source activate /home/yli11/.conda/envs/r_env
+samtools view -b ${COL1}.markdup.bam chr1 > ${COL1}.chr1.326709df242b.bam;samtools index ${COL1}.chr1.326709df242b.bam
+run_ATACseqQC.R ${COL1}.chr1.326709df242b.bam hg19
+rm ${COL1}.chr1.326709df242b.bam*
+module load macs2/2.1.1
+macs2 callpeak -t ${COL1}.bam -c ${COL2}.bam -f BAMPE -B --keep-dup all -n ${COL3}
+macs2 bdgcmp -t ${COL3}_treat_pileup.bdg -c ${COL3}_control_lambda.bdg -m qpois -o ${COL3}_treat_pvalue.bdg
+macs2 bdgcmp -t ${COL3}_treat_pileup.bdg -c ${COL3}_control_lambda.bdg -m FE -o ${COL3}_FE.bdg
+macs2 bdgcmp -t ${COL3}_treat_pileup.bdg -c ${COL3}_control_lambda.bdg -m logLR -o ${COL3}_logLR.bdg -p 0.01
+macs2 bdgpeakcall -i ${COL3}_treat_pvalue.bdg -c 1.301 -l 100 -g 75 -o ${COL3}_bdgpeaks.bed
+bedtools intersect -a ${COL3}_peaks.narrowPeak -b /research/dept/hem/common/sequencing/chenggrp/pipelines/subcmd/../hg19/hg19.blacklist.bed -v > ${COL3}_peaks.rmblck.narrowPeak
+bedtools intersect -a ${COL3}_bdgpeaks.bed -b /research/dept/hem/common/sequencing/chenggrp/pipelines/subcmd/../hg19/hg19.blacklist.bed -v > ${COL3}_bdgpeaks.rmblck.bed
+annot_gene_features.py -f ${COL3}_peaks.rmblck.narrowPeak -o ${COL3}_peaks.rmblck.narrowPeak.annot.tsv -g hg19
+pie_plot.py -f ${COL3}_peaks.rmblck.narrowPeak.annot.tsv --order Exon,Promoter,5UTR,3UTR,Intron,Intergenic --use_col -1 --header -o ${COL3}_peaks.rmblck.narrowPeak.genomic_features.pie_chart
+module load python/2.7.13;/home/yli11/HemTools/bin/calculate_FRiP.py ${COL1}.bam ${COL3}_peaks.rmblck.narrowPeak CHIP
+/research/dept/hem/common/sequencing/chenggrp/pipelines/subcmd/../bin/wigToBigWig ${COL3}_treat_pvalue.bdg /research/dept/hem/common/sequencing/chenggrp/pipelines/subcmd/../hg19/hg19.chrom.sizes ${COL3}_treat_pvalue.bw
+/research/dept/hem/common/sequencing/chenggrp/pipelines/subcmd/../bin/wigToBigWig ${COL3}_FE.bdg /research/dept/hem/common/sequencing/chenggrp/pipelines/subcmd/../hg19/hg19.chrom.sizes ${COL3}_FE.bw
+/research/dept/hem/common/sequencing/chenggrp/pipelines/subcmd/../bin/wigToBigWig ${COL3}_logLR.bdg /research/dept/hem/common/sequencing/chenggrp/pipelines/subcmd/../hg19/hg19.chrom.sizes ${COL3}_logLR.bw
+module load conda3
+source activate /home/yli11/.conda/envs/r_env
+samtools view -b ${COL1}.rmdup.uq.rmchrM.markdup.bam chr1 > ${COL1}.rmdup.uq.rmchrM.chr1.326709df242b.bam;samtools index ${COL1}.rmdup.uq.rmchrM.chr1.326709df242b.bam
+run_ATACseqQC.R ${COL1}.rmdup.uq.rmchrM.chr1.326709df242b.bam hg19
+
+(... more ...)
+------------------------------------------------------------
+
+Exited with exit code 1.
+
+Resource usage summary:
+
+    CPU time :                                   4277.79 sec.
+    Max Memory :                                 20288 MB
+    Average Memory :                             1702.80 MB
+    Total Requested Memory :                     80000.00 MB
+    Delta Memory :                               59712.00 MB
+    Max Swap :                                   -
+    Max Processes :                              7
+    Max Threads :                                68
+    Run time :                                   4432 sec.
+    Turnaround time :                            7601 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <cut_run_rfeng_2022-01-18.macs2.message_146946523_1.err> for stderr output of this job.
+

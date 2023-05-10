@@ -1,0 +1,66 @@
+Analysis complete for 175_clone_LMO2_S28_R1_001.fastq.gz
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@noderome200>
+Subject: Job 146946516[23]: <QC1[1-42]> in cluster <hpcf_research_cluster> Done
+
+Job <QC1[1-42]> was submitted from host <noderome147> by user <rfeng> in cluster <hpcf_research_cluster> at Tue Jan 18 13:18:51 2022
+Job was executed on host(s) <noderome200>, in queue <standard>, as user <rfeng> in cluster <hpcf_research_cluster> at Tue Jan 18 13:19:04 2022
+</home/rfeng> was used as the home directory.
+</research/dept/hem/common/sequencing/chenggrp/Ruopeng_CUTRUN/011422_CUTRUN/DrT> was used as the working directory.
+Started at Tue Jan 18 13:19:04 2022
+Terminated at Tue Jan 18 13:19:57 2022
+Results reported at Tue Jan 18 13:19:57 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+
+
+#BSUB -P cut_run
+#BSUB -o cut_run_rfeng_2022-01-18.fastqc.message_%J_%I.out -e cut_run_rfeng_2022-01-18.fastqc.message_%J_%I.err
+#BSUB -n 1
+#BSUB -q standard
+#BSUB -R "span[hosts=1] rusage[mem=4000]"
+#BSUB -J "QC1[1-42]"
+module purge
+module load fastqc/0.11.5
+
+id=$LSB_JOBINDEX
+COL1=`head -n $id cut_run_rfeng_2022-01-18.fastqc.input|tail -n1|awk -F "	" '{print $1}'`
+COL2=`head -n $id cut_run_rfeng_2022-01-18.fastqc.input|tail -n1|awk -F "	" '{print $2}'`
+COL3=`head -n $id cut_run_rfeng_2022-01-18.fastqc.input|tail -n1|awk -F "	" '{print $3}'`
+COL4=`head -n $id cut_run_rfeng_2022-01-18.fastqc.input|tail -n1|awk -F "	" '{print $4}'`
+COL5=`head -n $id cut_run_rfeng_2022-01-18.fastqc.input|tail -n1|awk -F "	" '{print $5}'`
+COL6=`head -n $id cut_run_rfeng_2022-01-18.fastqc.input|tail -n1|awk -F "	" '{print $6}'`
+LINE=`head -n $id cut_run_rfeng_2022-01-18.fastqc.input|tail -n1`
+
+fastqc ${COL1}
+
+		
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   44.90 sec.
+    Max Memory :                                 129 MB
+    Average Memory :                             99.09 MB
+    Total Requested Memory :                     4000.00 MB
+    Delta Memory :                               3871.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                18
+    Run time :                                   52 sec.
+    Turnaround time :                            66 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <cut_run_rfeng_2022-01-18.fastqc.message_146946516_23.err> for stderr output of this job.
+

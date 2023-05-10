@@ -1,0 +1,85 @@
+2515879_DOE16_19_S120_L002Aligned.sortedByCoord.out.bam_REDItool_results/DnaRna_298885138/outTable_298885138
+
+
+
+
+
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@noderome184>
+Subject: Job 179204708[19]: <AI[1-24]> in cluster <hpcf_research_cluster> Done
+
+Job <AI[1-24]> was submitted from host <noderome134> by user <yli11> in cluster <hpcf_research_cluster> at Thu Jan 12 15:25:46 2023
+Job was executed on host(s) <noderome184>, in queue <standard>, as user <yli11> in cluster <hpcf_research_cluster> at Thu Jan 12 15:25:52 2023
+</home/yli11> was used as the home directory.
+</research_jude/rgs01_jude/groups/chenggrp/projects/blood_regulome/chenggrp/Sequencing_runs/weissgrp_286772_RNAseq_total_stranded/rna_seq_variant_call_yli11_2023-01-09> was used as the working directory.
+Started at Thu Jan 12 15:25:52 2023
+Terminated at Thu Jan 12 16:20:26 2023
+Results reported at Thu Jan 12 16:20:26 2023
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+
+
+#BSUB -P run2_yli11
+#BSUB -o run2_yli11_2023-01-12/log_files/AI_%J_%I.out -e run2_yli11_2023-01-12/log_files/AI_%J_%I.err
+#BSUB -n 1
+#BSUB -q standard
+#BSUB -R "span[hosts=1] rusage[mem=30000]"
+#BSUB -J "AI[1-24]"
+
+
+
+module purge
+
+id=$LSB_JOBINDEX
+COL1=`head -n $id AI.list|tail -n1|awk -F "	" '{print $1}'`
+COL2=`head -n $id AI.list|tail -n1|awk -F "	" '{print $2}'`
+COL3=`head -n $id AI.list|tail -n1|awk -F "	" '{print $3}'`
+COL4=`head -n $id AI.list|tail -n1|awk -F "	" '{print $4}'`
+COL5=`head -n $id AI.list|tail -n1|awk -F "	" '{print $5}'`
+COL6=`head -n $id AI.list|tail -n1|awk -F "	" '{print $6}'`
+COL7=`head -n $id AI.list|tail -n1|awk -F "	" '{print $7}'`
+COL8=`head -n $id AI.list|tail -n1|awk -F "	" '{print $8}'`
+COL9=`head -n $id AI.list|tail -n1|awk -F "	" '{print $9}'`
+LINE=`head -n $id AI.list|tail -n1`
+
+echo ${COL1}
+echo ${COL2}
+echo ${COL3}
+echo ${COL4}
+echo ${COL5}
+echo ${COL6}
+
+mem=30000
+module load python/2.7.13
+python ~/HemTools/share/script/tabulate_reads_AtoI-stranded.py ${COL1}
+
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   3246.79 sec.
+    Max Memory :                                 18134 MB
+    Average Memory :                             14591.09 MB
+    Total Requested Memory :                     30000.00 MB
+    Delta Memory :                               11866.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                68
+    Run time :                                   3274 sec.
+    Turnaround time :                            3280 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <run2_yli11_2023-01-12/log_files/AI_179204708_19.err> for stderr output of this job.
+

@@ -1,0 +1,94 @@
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@noderome186>
+Subject: Job 146946518[17]: <rmdup[1-21]> in cluster <hpcf_research_cluster> Done
+
+Job <rmdup[1-21]> was submitted from host <noderome147> by user <rfeng> in cluster <hpcf_research_cluster> at Tue Jan 18 13:18:51 2022
+Job was executed on host(s) <6*noderome186>, in queue <standard>, as user <rfeng> in cluster <hpcf_research_cluster> at Tue Jan 18 13:36:59 2022
+</home/rfeng> was used as the home directory.
+</research/dept/hem/common/sequencing/chenggrp/Ruopeng_CUTRUN/011422_CUTRUN/DrT> was used as the working directory.
+Started at Tue Jan 18 13:36:59 2022
+Terminated at Tue Jan 18 13:49:03 2022
+Results reported at Tue Jan 18 13:49:03 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+
+
+#BSUB -P cut_run
+#BSUB -o cut_run_rfeng_2022-01-18.markdup.rmdup.message_%J_%I.out -e cut_run_rfeng_2022-01-18.markdup.rmdup.message_%J_%I.err
+#BSUB -n 6
+#BSUB -q standard
+#BSUB -R "span[hosts=1] rusage[mem=4000]"
+#BSUB -J "rmdup[1-21]"
+module purge
+#BSUB -w "ended(146946517[*])"
+module load samtools/1.7
+module load bedtools
+
+id=$LSB_JOBINDEX
+COL1=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $1}'`
+COL2=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $2}'`
+COL3=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $3}'`
+COL4=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $4}'`
+COL5=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $5}'`
+COL6=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $6}'`
+LINE=`head -n $id fastq.tsv|tail -n1`
+
+samtools stats ${COL3}.bam > ${COL3}.bam.stat
+samtools sort -@ 6 -n -o ${COL3}.name.st.bam ${COL3}.bam
+samtools fixmate -@ 6 -m ${COL3}.name.st.bam ${COL3}.fixmate.bam
+samtools sort -@ 6 -o ${COL3}.fixmate.st.bam ${COL3}.fixmate.bam
+samtools markdup -@ 6 ${COL3}.fixmate.st.bam ${COL3}.markdup.bam
+samtools markdup -@ 6 -r ${COL3}.markdup.bam ${COL3}.rmdup.bam
+rm ${COL3}.name.st.bam ${COL3}.fixmate.bam ${COL3}.fixmate.st.bam
+samtools flagstat -@ 6 ${COL3}.markdup.bam > ${COL3}.markdup.report
+samtools index -@ 6 ${COL3}.markdup.bam
+samtools view -@ 6 -q 1 -b ${COL3}.markdup.bam > ${COL3}.markdup.uq.bam
+samtools index -@ 6 ${COL3}.markdup.uq.bam
+samtools view -@ 6 -b -h -f 3 -F 4 -F 8 -o ${COL3}.rmdup.f3.bam ${COL3}.rmdup.bam; rm ${COL3}.rmdup.bam; mv ${COL3}.rmdup.f3.bam ${COL3}.rmdup.bam
+samtools index -@ 6 ${COL3}.rmdup.bam
+samtools view -@ 6 -q 1 -b ${COL3}.rmdup.bam > ${COL3}.rmdup.uq.bam
+samtools index -@ 6 ${COL3}.rmdup.uq.bam
+samtools view -@ 6 ${COL3}.markdup.bam chrM -b > ${COL3}.markdup.chrM.bam
+samtools flagstat -@ 6 ${COL3}.markdup.chrM.bam > ${COL3}.markdup.chrM.report
+samtools idxstats ${COL3}.rmdup.uq.bam | cut -f 1 | grep -v  chrM| xargs samtools view -@ 6 -b ${COL3}.rmdup.uq.bam > ${COL3}.rmdup.uq.rmchrM.bam;samtools index ${COL3}.rmdup.uq.rmchrM.bam
+samtools idxstats ${COL3}.markdup.bam | cut -f 1 | grep -v  chrM| xargs samtools view -@ 6 -b ${COL3}.markdup.bam > ${COL3}.markdup.rmchrM.bam;samtools index ${COL3}.markdup.rmchrM.bam
+samtools flagstat -@ 6 ${COL3}.markdup.rmchrM.bam > ${COL3}.markdup.rmchrM.report
+bedtools bamtobed -bedpe -i ${COL3}.markdup.bam | awk '$1==$4 && $6-$2 < 1000 {print $0}' | cut -f 1,2,6 | sort -k1,1 -k2,2n -k3,3n > ${COL3}.markdup.fragments.bed; bedtools genomecov -bg -i ${COL3}.markdup.fragments.bed -g /research/dept/hem/common/sequencing/chenggrp/pipelines/subcmd/../hg19/hg19.chrom.sizes > ${COL3}.markdup.fragments.bdg
+bedtools bamtobed -bedpe -i ${COL3}.rmdup.bam | awk '$1==$4 && $6-$2 < 1000 {print $0}' | cut -f 1,2,6 | sort -k1,1 -k2,2n -k3,3n > ${COL3}.rmdup.fragments.bed; bedtools genomecov -bg -i ${COL3}.rmdup.fragments.bed -g /research/dept/hem/common/sequencing/chenggrp/pipelines/subcmd/../hg19/hg19.chrom.sizes > ${COL3}.rmdup.fragments.bdg
+bedtools bamtobed -bedpe -i ${COL3}.rmdup.uq.bam | awk '$1==$4 && $6-$2 < 1000 {print $0}' | cut -f 1,2,6 | sort -k1,1 -k2,2n -k3,3n > ${COL3}.rmdup.uq.fragments.bed; bedtools genomecov -bg -i ${COL3}.rmdup.uq.fragments.bed -g /research/dept/hem/common/sequencing/chenggrp/pipelines/subcmd/../hg19/hg19.chrom.sizes > ${COL3}.rmdup.uq.fragments.bdg
+module load conda3
+source activate /home/yli11/.conda/envs/rseqc
+read_distribution.py -i ${COL3}.markdup.bam -r /home/yli11/Data/RSEQC_bed/hg19_RefSeq.bed > ${COL3}.markdup.read_distribution.tsv
+read_distribution.py -i ${COL3}.markdup.uq.bam -r /home/yli11/Data/RSEQC_bed/hg19_RefSeq.bed > ${COL3}.markdup.uq.read_distribution.tsv
+read_distribution.py -i ${COL3}.rmdup.uq.bam -r /home/yli11/Data/RSEQC_bed/hg19_RefSeq.bed > ${COL3}.rmdup.uq.read_distribution.tsv
+
+(... more ...)
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   1525.35 sec.
+    Max Memory :                                 2676 MB
+    Average Memory :                             553.38 MB
+    Total Requested Memory :                     24000.00 MB
+    Delta Memory :                               21324.00 MB
+    Max Swap :                                   -
+    Max Processes :                              7
+    Max Threads :                                19
+    Run time :                                   723 sec.
+    Turnaround time :                            1812 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <cut_run_rfeng_2022-01-18.markdup.rmdup.message_146946518_17.err> for stderr output of this job.
+

@@ -1,0 +1,88 @@
+a
+b
+c
+
+
+
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@noderome270>
+Subject: Job 179055961[1]: <email[1-1]> in cluster <hpcf_research_cluster> Done
+
+Job <email[1-1]> was submitted from host <noderome134> by user <yli11> in cluster <hpcf_research_cluster> at Mon Jan  9 09:57:37 2023
+Job was executed on host(s) <noderome270>, in queue <standard>, as user <yli11> in cluster <hpcf_research_cluster> at Mon Jan  9 22:11:26 2023
+</home/yli11> was used as the home directory.
+</home/yli11/dirs/Sequencing_runs/weissgrp_286772_RNAseq_total_stranded> was used as the working directory.
+Started at Mon Jan  9 22:11:26 2023
+Terminated at Mon Jan  9 22:11:44 2023
+Results reported at Mon Jan  9 22:11:44 2023
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+
+
+#BSUB -P rna_seq_va
+#BSUB -o rna_seq_variant_call_yli11_2023-01-09/log_files/email_%J_%I.out -e rna_seq_variant_call_yli11_2023-01-09/log_files/email_%J_%I.err
+#BSUB -n 1
+#BSUB -q standard
+#BSUB -R "span[hosts=1] rusage[mem=4000]"
+#BSUB -J "email[1-1]"
+
+#BSUB -w "ended(179055956) && ended(179055957) && ended(179055958) && ended(179055959) && ended(179055960)"
+
+module purge
+
+id=$LSB_JOBINDEX
+COL1=`head -n $id /research/rgs01/home/clusterHome/yli11/HemTools/utils/../share/misc/sample.tsv|tail -n1|awk -F "	" '{print $1}'`
+COL2=`head -n $id /research/rgs01/home/clusterHome/yli11/HemTools/utils/../share/misc/sample.tsv|tail -n1|awk -F "	" '{print $2}'`
+COL3=`head -n $id /research/rgs01/home/clusterHome/yli11/HemTools/utils/../share/misc/sample.tsv|tail -n1|awk -F "	" '{print $3}'`
+COL4=`head -n $id /research/rgs01/home/clusterHome/yli11/HemTools/utils/../share/misc/sample.tsv|tail -n1|awk -F "	" '{print $4}'`
+COL5=`head -n $id /research/rgs01/home/clusterHome/yli11/HemTools/utils/../share/misc/sample.tsv|tail -n1|awk -F "	" '{print $5}'`
+COL6=`head -n $id /research/rgs01/home/clusterHome/yli11/HemTools/utils/../share/misc/sample.tsv|tail -n1|awk -F "	" '{print $6}'`
+COL7=`head -n $id /research/rgs01/home/clusterHome/yli11/HemTools/utils/../share/misc/sample.tsv|tail -n1|awk -F "	" '{print $7}'`
+COL8=`head -n $id /research/rgs01/home/clusterHome/yli11/HemTools/utils/../share/misc/sample.tsv|tail -n1|awk -F "	" '{print $8}'`
+COL9=`head -n $id /research/rgs01/home/clusterHome/yli11/HemTools/utils/../share/misc/sample.tsv|tail -n1|awk -F "	" '{print $9}'`
+LINE=`head -n $id /research/rgs01/home/clusterHome/yli11/HemTools/utils/../share/misc/sample.tsv|tail -n1`
+
+echo ${COL1}
+echo ${COL2}
+echo ${COL3}
+echo ${COL4}
+echo ${COL5}
+echo ${COL6}
+
+module load python/2.7.13
+cd rna_seq_variant_call_yli11_2023-01-09
+mv *.lsf log_files
+mkdir final_results
+mv *final*.vcf final_results
+send_email_v1.py -m "RNA-seq variant call is finished!" -j rna_seq_variant_call_yli11_2023-01-09
+
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   1.69 sec.
+    Max Memory :                                 77 MB
+    Average Memory :                             53.00 MB
+    Total Requested Memory :                     4000.00 MB
+    Delta Memory :                               3923.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                68
+    Run time :                                   18 sec.
+    Turnaround time :                            44047 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <rna_seq_variant_call_yli11_2023-01-09/log_files/email_179055961_1.err> for stderr output of this job.
+

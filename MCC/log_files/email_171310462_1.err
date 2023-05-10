@@ -1,0 +1,23 @@
+perl/5.10.1 is loaded
+mv: cannot stat ‘*fastqc.zip’: No such file or directory
+mv: cannot stat ‘*fastqc.html’: No such file or directory
+mv: cannot stat ‘*trimming_report.txt’: No such file or directory
+[NbConvertApp] WARNING | Config option `template_path` not recognized by `NotebookExporter`.
+[NbConvertApp] Converting notebook MicroC_report_summary.ipynb to notebook
+[NbConvertApp] Executing notebook with kernel: python3
+[NbConvertApp] Writing 13206 bytes to MicroC_report_summary.ipynb
+[NbConvertApp] Converting notebook MicroC_report_summary.ipynb to html
+[NbConvertApp] Writing 294400 bytes to MicroC_report_summary.html
+
+  /// MultiQC 🔍 | v1.11
+
+|           multiqc | MultiQC Version v1.13 now available!
+|           multiqc | Report title: {{jid}}
+|           multiqc | Search path : /research_jude/rgs01_jude/groups/chenggrp/projects/blood_regulome/chenggrp/Projects/jchen6/Shared_Resources/weissgrp_283065_MCC/MicroC_yli11_2022-10-18
+|           bowtie2 | Found 10 reports
+|          cutadapt | Found 10 reports
+|             flash | Found 10 log reports
+|           multiqc | Compressing plot data
+|           multiqc | Report      : multiqc_report.html
+|           multiqc | Data        : multiqc_data
+|           multiqc | MultiQC complete

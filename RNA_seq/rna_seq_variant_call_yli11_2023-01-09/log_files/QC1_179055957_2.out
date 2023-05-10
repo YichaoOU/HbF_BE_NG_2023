@@ -1,0 +1,89 @@
+2515882_DOE16_22_S123_L002_R1_001.fastq.gz
+2515882_DOE16_22_S123_L002_R2_001.fastq.gz
+2515882_DOE16_22_S123_L002
+
+
+
+Analysis complete for 2515882_DOE16_22_S123_L002_R1_001.fastq.gz
+Analysis complete for 2515882_DOE16_22_S123_L002_R2_001.fastq.gz
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@noderome264>
+Subject: Job 179055957[2]: <QC1[1-24]> in cluster <hpcf_research_cluster> Done
+
+Job <QC1[1-24]> was submitted from host <noderome134> by user <yli11> in cluster <hpcf_research_cluster> at Mon Jan  9 09:57:37 2023
+Job was executed on host(s) <noderome264>, in queue <standard>, as user <yli11> in cluster <hpcf_research_cluster> at Mon Jan  9 09:57:41 2023
+</home/yli11> was used as the home directory.
+</home/yli11/dirs/Sequencing_runs/weissgrp_286772_RNAseq_total_stranded> was used as the working directory.
+Started at Mon Jan  9 09:57:41 2023
+Terminated at Mon Jan  9 10:19:07 2023
+Results reported at Mon Jan  9 10:19:07 2023
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+
+
+#BSUB -P rna_seq_va
+#BSUB -o rna_seq_variant_call_yli11_2023-01-09/log_files/QC1_%J_%I.out -e rna_seq_variant_call_yli11_2023-01-09/log_files/QC1_%J_%I.err
+#BSUB -n 1
+#BSUB -q standard
+#BSUB -R "span[hosts=1] rusage[mem=4000]"
+#BSUB -J "QC1[1-24]"
+
+
+
+module purge
+
+id=$LSB_JOBINDEX
+COL1=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $1}'`
+COL2=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $2}'`
+COL3=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $3}'`
+COL4=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $4}'`
+COL5=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $5}'`
+COL6=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $6}'`
+COL7=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $7}'`
+COL8=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $8}'`
+COL9=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $9}'`
+LINE=`head -n $id fastq.tsv|tail -n1`
+
+echo ${COL1}
+echo ${COL2}
+echo ${COL3}
+echo ${COL4}
+echo ${COL5}
+echo ${COL6}
+
+module load fastqc/0.11.5
+ncore=1
+mem=4000
+fastqc ${COL1} -o rna_seq_variant_call_yli11_2023-01-09
+fastqc ${COL2} -o rna_seq_variant_call_yli11_2023-01-09
+
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   900.47 sec.
+    Max Memory :                                 270 MB
+    Average Memory :                             203.60 MB
+    Total Requested Memory :                     4000.00 MB
+    Delta Memory :                               3730.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                18
+    Run time :                                   1286 sec.
+    Turnaround time :                            1290 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <rna_seq_variant_call_yli11_2023-01-09/log_files/QC1_179055957_2.err> for stderr output of this job.
+

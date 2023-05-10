@@ -1,0 +1,57 @@
+
+
+#BSUB -P MicroC_yli
+#BSUB -o MicroC_yli11_2022-10-18/log_files/email_%J_%I.out -e MicroC_yli11_2022-10-18/log_files/email_%J_%I.err
+#BSUB -n 1
+#BSUB -q standard
+#BSUB -R "span[hosts=1] rusage[mem=100000]"
+#BSUB -J "email[1-1]"
+
+#BSUB -w "ended(171310461)"
+
+module purge
+
+id=$LSB_JOBINDEX
+COL1=`head -n $id /research/rgs01/home/clusterHome/yli11/HemTools/utils/../share/misc/sample.tsv|tail -n1|awk -F "	" '{print $1}'`
+COL2=`head -n $id /research/rgs01/home/clusterHome/yli11/HemTools/utils/../share/misc/sample.tsv|tail -n1|awk -F "	" '{print $2}'`
+COL3=`head -n $id /research/rgs01/home/clusterHome/yli11/HemTools/utils/../share/misc/sample.tsv|tail -n1|awk -F "	" '{print $3}'`
+COL4=`head -n $id /research/rgs01/home/clusterHome/yli11/HemTools/utils/../share/misc/sample.tsv|tail -n1|awk -F "	" '{print $4}'`
+COL5=`head -n $id /research/rgs01/home/clusterHome/yli11/HemTools/utils/../share/misc/sample.tsv|tail -n1|awk -F "	" '{print $5}'`
+COL6=`head -n $id /research/rgs01/home/clusterHome/yli11/HemTools/utils/../share/misc/sample.tsv|tail -n1|awk -F "	" '{print $6}'`
+COL7=`head -n $id /research/rgs01/home/clusterHome/yli11/HemTools/utils/../share/misc/sample.tsv|tail -n1|awk -F "	" '{print $7}'`
+COL8=`head -n $id /research/rgs01/home/clusterHome/yli11/HemTools/utils/../share/misc/sample.tsv|tail -n1|awk -F "	" '{print $8}'`
+COL9=`head -n $id /research/rgs01/home/clusterHome/yli11/HemTools/utils/../share/misc/sample.tsv|tail -n1|awk -F "	" '{print $9}'`
+LINE=`head -n $id /research/rgs01/home/clusterHome/yli11/HemTools/utils/../share/misc/sample.tsv|tail -n1`
+
+echo ${COL1}
+echo ${COL2}
+echo ${COL3}
+echo ${COL4}
+echo ${COL5}
+echo ${COL6}
+
+ncore=1
+mem=100000
+q=standard
+mv *fastqc.zip MicroC_yli11_2022-10-18
+mv *fastqc.html MicroC_yli11_2022-10-18
+mv *trimming_report.txt MicroC_yli11_2022-10-18
+cd MicroC_yli11_2022-10-18
+module load conda3/202011
+source activate /home/yli11/.conda/envs/captureC
+module load texlive/20190410
+export XDG_RUNTIME_DIR=""
+mkdir /scratch_space/yli11/$$
+export JUPYTER_RUNTIME_DIR=/scratch_space/yli11/$$
+src=/home/yli11/Programs/Micro-Capture-C
+cp $src/MicroC_report_summary.ipynb .
+jupyter nbconvert --to notebook --execute MicroC_report_summary.ipynb --output MicroC_report_summary --ExecutePreprocessor.timeout=-1 --allow-errors
+jupyter nbconvert MicroC_report_summary.ipynb --to html
+source activate /home/yli11/.conda/envs/multiQC/
+export LC_ALL=en_US.utf-8
+export LANG=en_US.utf-8
+cp /home/yli11/HemTools/share/NGS_pipeline/multiqc_config.yaml .
+multiqc .
+module load python/2.7.13
+send_email_v1.py -a multiqc_report.html,MicroC_summary.html -m "MicroC_yli11_2022-10-18 is finished" -j MicroC_yli11_2022-10-18 --common
+

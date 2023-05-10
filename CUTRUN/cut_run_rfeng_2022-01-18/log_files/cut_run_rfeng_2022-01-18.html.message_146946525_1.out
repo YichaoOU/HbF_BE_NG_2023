@@ -1,0 +1,94 @@
+Sender: LSF System <lsfadmin@noderome110>
+Subject: Job 146946525[1]: <html[1-1]> in cluster <hpcf_research_cluster> Done
+
+Job <html[1-1]> was submitted from host <noderome147> by user <rfeng> in cluster <hpcf_research_cluster> at Tue Jan 18 13:18:52 2022
+Job was executed on host(s) <noderome110>, in queue <standard>, as user <rfeng> in cluster <hpcf_research_cluster> at Tue Jan 18 16:39:57 2022
+</home/rfeng> was used as the home directory.
+</research/dept/hem/common/sequencing/chenggrp/Ruopeng_CUTRUN/011422_CUTRUN/DrT> was used as the working directory.
+Started at Tue Jan 18 16:39:57 2022
+Terminated at Tue Jan 18 16:46:01 2022
+Results reported at Tue Jan 18 16:46:01 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+
+
+#BSUB -P cut_run
+#BSUB -o cut_run_rfeng_2022-01-18/log_files/cut_run_rfeng_2022-01-18.html.message_%J_%I.out -e cut_run_rfeng_2022-01-18/log_files/cut_run_rfeng_2022-01-18.html.message_%J_%I.err
+#BSUB -n 1
+#BSUB -q standard
+#BSUB -R "span[hosts=1] rusage[mem=8000]"
+#BSUB -J "html[1-1]"
+module purge
+#BSUB -w "ended(146946516) && ended(146946518) && ended(146946517) && ended(146946524) && ended(146946522) && ended(146946520) && ended(146946523) && ended(146946521) && ended(146946519)"
+module load python/2.7.13
+
+id=$LSB_JOBINDEX
+COL1=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $1}'`
+COL2=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $2}'`
+COL3=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $3}'`
+COL4=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $4}'`
+COL5=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $5}'`
+COL6=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $6}'`
+LINE=`head -n $id fastq.tsv|tail -n1`
+
+mkdir cut_run_rfeng_2022-01-18
+/research/dept/hem/common/sequencing/chenggrp/pipelines/subcmd/NGS.report.py cut_run_rfeng_2022-01-18 cut_run DrT_sample3_GATA1_S17_R1_001.fastq.gz,DrT_sample3_GATA1_S17_R2_001.fastq.gz,DrT_sample4_GATA1_S21_R1_001.fastq.gz,DrT_sample4_GATA1_S21_R2_001.fastq.gz,DrT_sample2_GATA1_S13_R1_001.fastq.gz,DrT_sample2_GATA1_S13_R2_001.fastq.gz,DrT_sample2_LDB1_S14_R1_001.fastq.gz,DrT_sample2_LDB1_S14_R2_001.fastq.gz,DrT_sample4_LMO2_S24_R1_001.fastq.gz,DrT_sample4_LMO2_S24_R2_001.fastq.gz,DrT_sample1_TAL1_S11_R1_001.fastq.gz,DrT_sample1_TAL1_S11_R2_001.fastq.gz,DrT_sample3_TAL1_S19_R1_001.fastq.gz,DrT_sample3_TAL1_S19_R2_001.fastq.gz,DrT_sample1_LDB1_S10_R1_001.fastq.gz,DrT_sample1_LDB1_S10_R2_001.fastq.gz,186_clone_LMO2_S29_R1_001.fastq.gz,186_clone_LMO2_S29_R2_001.fastq.gz,DrT_sample2_TAL1_S15_R1_001.fastq.gz,DrT_sample2_TAL1_S15_R2_001.fastq.gz,DrT_sample4_TAL1_S23_R1_001.fastq.gz,DrT_sample4_TAL1_S23_R2_001.fastq.gz,175_clone_LMO2_S28_R1_001.fastq.gz,175_clone_LMO2_S28_R2_001.fastq.gz,DrT_sample1_LMO2_S12_R1_001.fastq.gz,DrT_sample1_LMO2_S12_R2_001.fastq.gz,DrT_sample3_LMO2_S20_R1_001.fastq.gz,DrT_sample3_LMO2_S20_R2_001.fastq.gz,175_186_clone_LMO2_S30_R1_001.fastq.gz,175_186_clone_LMO2_S30_R2_001.fastq.gz,DrT_sample4_LDB1_S22_R1_001.fastq.gz,DrT_sample4_LDB1_S22_R2_001.fastq.gz,DrT_sample2_LMO2_S16_R1_001.fastq.gz,DrT_sample2_LMO2_S16_R2_001.fastq.gz,WT_HUDEP2_LMO2_S27_R1_001.fastq.gz,WT_HUDEP2_LMO2_S27_R2_001.fastq.gz,Hudep2_IgG_rbt_S7_R1_001.fastq.gz,Hudep2_IgG_rbt_S7_R2_001.fastq.gz,DrT_sample3_LDB1_S18_R1_001.fastq.gz,DrT_sample3_LDB1_S18_R2_001.fastq.gz,DrT_sample1_GATA1_S9_R1_001.fastq.gz,DrT_sample1_GATA1_S9_R2_001.fastq.gz DrT_sample3_GATA1_S17,DrT_sample4_GATA1_S21,DrT_sample2_GATA1_S13,DrT_sample2_LDB1_S14,DrT_sample4_LMO2_S24,DrT_sample1_TAL1_S11,DrT_sample3_TAL1_S19,DrT_sample1_LDB1_S10,186_clone_LMO2_S29,DrT_sample2_TAL1_S15,DrT_sample4_TAL1_S23,175_clone_LMO2_S28,DrT_sample1_LMO2_S12,DrT_sample3_LMO2_S20,175_186_clone_LMO2_S30,DrT_sample4_LDB1_S22,DrT_sample2_LMO2_S16,WT_HUDEP2_LMO2_S27,Hudep2_IgG_rbt_S7,DrT_sample3_LDB1_S18,DrT_sample1_GATA1_S9
+mqc_tsv_merge.py FRiP.tsv FRIP_mqc.tsv
+mqc_tsv_merge.py spp.log.tsv SPP_mqc.tsv
+mqc_tsv_merge.py lib.complexity.tsv Lib.complexity_mqc.tsv
+mqc_tsv_merge.py TSS_enrichment.tsv TSS_enrichment_mqc.tsv
+module load conda3
+source activate /home/yli11/.conda/envs/multiQC/
+export LC_ALL=en_US.utf-8
+export LANG=en_US.utf-8
+cp /home/yli11/HemTools/share/NGS_pipeline/multiqc_config.yaml .
+sed -i 's/{{jid}}/cut_run/g' multiqc_config.yaml
+multiqc .
+/research/dept/hem/common/sequencing/chenggrp/pipelines/subcmd/send_email.py b4fc7bcaf965.bwDict
+mkdir cut_run_rfeng_2022-01-18/figures_tables
+mv cut_run_rfeng_2022-01-18.report.html cut_run_rfeng_2022-01-18/figures_tables
+mkdir cut_run_rfeng_2022-01-18/log_files
+mv cut_run_rfeng_2022-01-18.fastqc.input cut_run_rfeng_2022-01-18/log_files
+mv cut_run_rfeng_2022-01-18.fastqc.lsf cut_run_rfeng_2022-01-18/log_files
+mv cut_run_rfeng_2022-01-18.fastqc.message_146946516_1.out cut_run_rfeng_2022-01-18/log_files
+mv cut_run_rfeng_2022-01-18.fastqc.message_146946516_1.err cut_run_rfeng_2022-01-18/log_files
+mv cut_run_rfeng_2022-01-18.fastqc.message_146946516_2.out cut_run_rfeng_2022-01-18/log_files
+mv cut_run_rfeng_2022-01-18.fastqc.message_146946516_2.err cut_run_rfeng_2022-01-18/log_files
+mv cut_run_rfeng_2022-01-18.fastqc.message_146946516_3.out cut_run_rfeng_2022-01-18/log_files
+mv cut_run_rfeng_2022-01-18.fastqc.message_146946516_3.err cut_run_rfeng_2022-01-18/log_files
+mv cut_run_rfeng_2022-01-18.fastqc.message_146946516_4.out cut_run_rfeng_2022-01-18/log_files
+mv cut_run_rfeng_2022-01-18.fastqc.message_146946516_4.err cut_run_rfeng_2022-01-18/log_files
+mv cut_run_rfeng_2022-01-18.fastqc.message_146946516_5.out cut_run_rfeng_2022-01-18/log_files
+mv cut_run_rfeng_2022-01-18.fastqc.message_146946516_5.err cut_run_rfeng_2022-01-18/log_files
+
+(... more ...)
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   295.72 sec.
+    Max Memory :                                 174 MB
+    Average Memory :                             47.58 MB
+    Total Requested Memory :                     8000.00 MB
+    Delta Memory :                               7826.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                68
+    Run time :                                   363 sec.
+    Turnaround time :                            12429 sec.
+
+The output (if any) follows:
+
+No files found for spp.log.tsv
+No files found for TSS_enrichment.tsv
+
+
+PS:
+
+Read file <cut_run_rfeng_2022-01-18/log_files/cut_run_rfeng_2022-01-18.html.message_146946525_1.err> for stderr output of this job.
+

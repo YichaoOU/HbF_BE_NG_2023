@@ -1,0 +1,66 @@
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@noderome199>
+Subject: Job 146946517[17]: <BWA[1-21]> in cluster <hpcf_research_cluster> Done
+
+Job <BWA[1-21]> was submitted from host <noderome147> by user <rfeng> in cluster <hpcf_research_cluster> at Tue Jan 18 13:18:51 2022
+Job was executed on host(s) <6*noderome199>, in queue <standard>, as user <rfeng> in cluster <hpcf_research_cluster> at Tue Jan 18 13:26:13 2022
+</home/rfeng> was used as the home directory.
+</research/dept/hem/common/sequencing/chenggrp/Ruopeng_CUTRUN/011422_CUTRUN/DrT> was used as the working directory.
+Started at Tue Jan 18 13:26:13 2022
+Terminated at Tue Jan 18 13:34:41 2022
+Results reported at Tue Jan 18 13:34:41 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+
+
+#BSUB -P cut_run
+#BSUB -o cut_run_rfeng_2022-01-18.BWA.message_%J_%I.out -e cut_run_rfeng_2022-01-18.BWA.message_%J_%I.err
+#BSUB -n 6
+#BSUB -q standard
+#BSUB -R "span[hosts=1] rusage[mem=6000]"
+#BSUB -J "BWA[1-21]"
+module purge
+module load bwa/0.7.16a
+module load samtools/1.7
+
+id=$LSB_JOBINDEX
+COL1=`head -n $id cut_run_rfeng_2022-01-18.bwa.input|tail -n1|awk -F "	" '{print $1}'`
+COL2=`head -n $id cut_run_rfeng_2022-01-18.bwa.input|tail -n1|awk -F "	" '{print $2}'`
+COL3=`head -n $id cut_run_rfeng_2022-01-18.bwa.input|tail -n1|awk -F "	" '{print $3}'`
+COL4=`head -n $id cut_run_rfeng_2022-01-18.bwa.input|tail -n1|awk -F "	" '{print $4}'`
+COL5=`head -n $id cut_run_rfeng_2022-01-18.bwa.input|tail -n1|awk -F "	" '{print $5}'`
+COL6=`head -n $id cut_run_rfeng_2022-01-18.bwa.input|tail -n1|awk -F "	" '{print $6}'`
+LINE=`head -n $id cut_run_rfeng_2022-01-18.bwa.input|tail -n1`
+
+bwa mem -t 6 /research/dept/hem/common/sequencing/chenggrp/pipelines/subcmd/../hg19/bwa_16a_index/hg19.fa ${COL1} ${COL2} |samtools view -@ 6 -bS - > ${COL3}.bam
+
+		
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   2289.52 sec.
+    Max Memory :                                 7119 MB
+    Average Memory :                             6414.49 MB
+    Total Requested Memory :                     36000.00 MB
+    Delta Memory :                               28881.00 MB
+    Max Swap :                                   -
+    Max Processes :                              5
+    Max Threads :                                21
+    Run time :                                   507 sec.
+    Turnaround time :                            950 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <cut_run_rfeng_2022-01-18.BWA.message_146946517_17.err> for stderr output of this job.
+

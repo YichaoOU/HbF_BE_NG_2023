@@ -1,0 +1,173 @@
+Script version: /home/yli11/Programs/Micro-Capture-C/MCC_analyser.pl
+Input parameters
+Input path/file: HS3_2488927_Hudep2_175_rep1_merged.sam
+Public folder: .
+Public URL: 
+Full URL: .
+Bigwig Foler: /home/yli11/Data/Human/hg19/annotations/hg19.chrom.sizes
+Genome hg19
+Sample name: MCC
+Oligo file: ../HS3_2488927_Hudep2_175_rep1_HS3_bait.bed_split_800bp.fa
+#### Script started at: 19/9/122 0:25:47                              ####
+#### If you don't see a time stamp for the script finishing it has crashed somewhere! ####
+From the filename - processing HS3-bait1	chr11	oligo start	5305459	oligo_end	5306259
+
+From the filename - processing HS3-bait2	chr11	oligo start	5305782	oligo_end	5306582
+
+HS3_2488927_Hudep2_175_rep1_merged_de_norm_rep couldn't move files
+track type=bigWig name="HS3_2488927_Hudep2_175_rep1_merged_de_norm_rep" description="HS3_2488927_Hudep2_175_rep1_merged_de_norm_rep" bigDataUrl=http://./HS3_2488927_Hudep2_175_rep1_merged_de_norm_rep.bw
+HS3_2488927_Hudep2_175_rep1_merged_ALL_FP couldn't move files
+track type=bigWig name="HS3_2488927_Hudep2_175_rep1_merged_ALL_FP" description="HS3_2488927_Hudep2_175_rep1_merged_ALL_FP" bigDataUrl=http://./HS3_2488927_Hudep2_175_rep1_merged_ALL_FP.bw
+HS3_2488927_Hudep2_175_rep1_merged_UP_FP couldn't move files
+track type=bigWig name="HS3_2488927_Hudep2_175_rep1_merged_UP_FP" description="HS3_2488927_Hudep2_175_rep1_merged_UP_FP" bigDataUrl=http://./HS3_2488927_Hudep2_175_rep1_merged_UP_FP.bw
+HS3_2488927_Hudep2_175_rep1_merged_DO_FP couldn't move files
+track type=bigWig name="HS3_2488927_Hudep2_175_rep1_merged_DO_FP" description="HS3_2488927_Hudep2_175_rep1_merged_DO_FP" bigDataUrl=http://./HS3_2488927_Hudep2_175_rep1_merged_DO_FP.bw
+#### If you don't see a this time stamp for the script finishing it has crashed!      ####
+#### Script finished at: 19/9/122 0:29:                                 ####
+
+Run Statistics
+!! potential problem - gene doesn't match target from filename HS3-bait1 v HS3	1,068,865
+!! potential problem - gene doesn't match target from filename HS3-bait2 v HS3	2,866,382
+01 DNA sequences in oligo file qq	2
+01 Number of oligos loaded	2
+01a Duplicate reads Total:	3,378,009
+01a Lines in sam file headder:	89
+01a Number of non-duplicated reads Total:	84,441
+01a Total number of reads:	3,470,375
+01b Total lines in sam file:	3,977,088
+01c Aligning sequences:	3,935,247
+01c Non aligning sequences:	41,752
+01c Normalisation factor	0.341250341250341
+01c cis junctions	3,867
+01c trans junctions	5,701
+02 Wobble duplicates excluded:	7,925
+02 readname reporters defined	402,305
+02 readno reporters defined	-3,165,640
+02!Blat vs oligo mismatches	946,865
+02!_multi_match_target:	2,581,199
+02_fragments_without_oligo_map_and_reporter	80,968
+02_oligo_HS3-bait1:	1,002,492
+02_oligo_HS3-bait2:	2,570,331
+02_oligos_assigned:	3,572,823
+02_unique_oligo_matches_with_reporter:	10,177
+02_unique_reporters_with_oligo_match:	29,304
+02_unique_reporters_with_oligo_match_cis:	29,304
+03 Unique junctions identified:	9,568
+03 non perfect junctions	18,475
+06b Number of non-duplicated reads n=1	49,717
+06b Number of non-duplicated reads n=2	33,475
+06b Number of non-duplicated reads n=3	1,215
+06b Number of non-duplicated reads n=4	33
+06b Number of non-duplicated reads n=5	1
+06c Duplicate reads n=1:	2,979,023
+06c Duplicate reads n=2:	378,965
+06c Duplicate reads n=3:	19,532
+06c Duplicate reads n=4:	484
+06c Duplicate reads n=5:	5
+10 Gene: HS3-bait1	1,068,865
+10 Gene: HS3-bait2	2,866,382
+10_input_oligo_size:	800	2
+11 Non PCR duplicate filtered reads types reporter v oligo N v Y:	3,081,343
+11 Non PCR duplicate filtered reads types reporter v oligo Y v N:	3,465
+11 Non PCR duplicate filtered reads types reporter v oligo Y v Y:	385,567
+11 PCR duplicate filtered reads types reporter v oligo N v Y:	52,843
+11 PCR duplicate filtered reads types reporter v oligo Y v N:	462
+11 PCR duplicate filtered reads types reporter v oligo Y v Y:	31,136
+21d readtype: C1.0	2,515,803
+21d readtype: C1.1	36,477
+21d readtype: C1.2	1,678
+21d readtype: C1.3	125
+21d readtype: C1.4	14
+21d readtype: C2.0	950,778
+21d readtype: C2.1	12,415
+21d readtype: C2.2	632
+21d readtype: C2.3	26
+21d readtype: C2.4	1
+21d readtype: C3.0	45,484
+21d readtype: C3.1	1,456
+21d readtype: C3.2	241
+21d readtype: C3.3	27
+21d readtype: C4.0	7,687
+21d readtype: C4.1	322
+21d readtype: C5.0	687
+21d readtype: C5.1	1
+21d readtype: C5.2	3
+21d readtype: C6.0	10
+21d readtype: C7.0	1
+21d readtype: R	361,379
+22_oligo_multimatch_HS3-bait1:	2,552,744
+22_oligo_multimatch_HS3-bait2:	28,455
+22a_fragments_without_oligo_map_and_reporter_oligo_match_E:	60,017
+22a_fragments_without_oligo_map_and_reporter_oligo_match_O:	17,866
+22a_fragments_without_oligo_map_and_reporter_oligo_match_P:	2,587
+22a_fragments_without_oligo_map_and_reporter_oligo_match_R:	498
+22b_fragments_without_oligo_map_and_reporter_blat_match_C1.0:	58,495
+22b_fragments_without_oligo_map_and_reporter_blat_match_C1.1:	2,890
+22b_fragments_without_oligo_map_and_reporter_blat_match_C1.2:	601
+22b_fragments_without_oligo_map_and_reporter_blat_match_C1.3:	49
+22b_fragments_without_oligo_map_and_reporter_blat_match_C1.4:	7
+22b_fragments_without_oligo_map_and_reporter_blat_match_C2.0:	15,065
+22b_fragments_without_oligo_map_and_reporter_blat_match_C2.1:	874
+22b_fragments_without_oligo_map_and_reporter_blat_match_C2.2:	72
+22b_fragments_without_oligo_map_and_reporter_blat_match_C2.3:	2
+22b_fragments_without_oligo_map_and_reporter_blat_match_C3.0:	1,883
+22b_fragments_without_oligo_map_and_reporter_blat_match_C3.1:	68
+22b_fragments_without_oligo_map_and_reporter_blat_match_C3.2:	25
+22b_fragments_without_oligo_map_and_reporter_blat_match_C3.3:	2
+22b_fragments_without_oligo_map_and_reporter_blat_match_C4.0:	241
+22b_fragments_without_oligo_map_and_reporter_blat_match_C4.1:	12
+22b_fragments_without_oligo_map_and_reporter_blat_match_C5.0:	20
+22b_fragments_without_oligo_map_and_reporter_blat_match_C5.2:	1
+22b_fragments_without_oligo_map_and_reporter_blat_match_C6.0:	1
+22b_fragments_without_oligo_map_and_reporter_blat_match_R:	660
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_E v C1.0:	109,992
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_E v C1.1:	5,116
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_E v C1.2:	1,112
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_E v C1.3:	90
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_E v C1.4:	12
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_E v C2.0:	1,284
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_E v C2.1:	36
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_E v C2.2:	2
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_E v C3.0:	1,900
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_E v C3.1:	104
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_E v C3.2:	34
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_E v C3.3:	4
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_E v C4.0:	108
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_E v C4.1:	4
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_E v C5.0:	26
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_E v R:	210
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_O v C1.0:	6,974
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_O v C1.1:	56
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_O v C1.2:	16
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_O v C1.3:	2
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_O v C2.0:	28,466
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_O v C2.1:	136
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_O v C2.2:	16
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_O v C3.0:	60
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_O v C3.1:	2
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_O v C3.2:	2
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_O v R:	2
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_P v C1.1:	608
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_P v C1.2:	74
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_P v C1.3:	6
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_P v C1.4:	2
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_P v C2.0:	380
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_P v C2.1:	1,576
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_P v C2.2:	126
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_P v C2.3:	4
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_P v C3.0:	1,806
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_P v C3.1:	30
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_P v C3.2:	14
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_P v C4.0:	374
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_P v C4.1:	20
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_P v C5.0:	14
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_P v C5.2:	2
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_P v C6.0:	2
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_P v R:	136
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_R v C1.0:	24
+22c_fragments_without_oligo_map_and_reporter_oligo_v_blat_match_R v R:	972
+22d_fragments_without_oligo_map_and_reporter_reporter_v_oligo_readtype_N v Y:	56,500
+22d_fragments_without_oligo_map_and_reporter_reporter_v_oligo_readtype_Y v N:	498
+22d_fragments_without_oligo_map_and_reporter_reporter_v_oligo_readtype_Y v Y:	23,970
+26!Blat vs oligo mismatches HS3-bait1	372
+26!Blat vs oligo mismatches HS3-bait2	946,493

@@ -1,0 +1,90 @@
+2515882_DOE16_22_S123_L002_R1_001.fastq.gz
+2515882_DOE16_22_S123_L002_R2_001.fastq.gz
+2515882_DOE16_22_S123_L002
+
+
+
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@noderome284>
+Subject: Job 179055960[2]: <sam[1-24]> in cluster <hpcf_research_cluster> Done
+
+Job <sam[1-24]> was submitted from host <noderome134> by user <yli11> in cluster <hpcf_research_cluster> at Mon Jan  9 09:57:37 2023
+Job was executed on host(s) <noderome284>, in queue <standard>, as user <yli11> in cluster <hpcf_research_cluster> at Mon Jan  9 10:46:35 2023
+</home/yli11> was used as the home directory.
+</home/yli11/dirs/Sequencing_runs/weissgrp_286772_RNAseq_total_stranded> was used as the working directory.
+Started at Mon Jan  9 10:46:35 2023
+Terminated at Mon Jan  9 16:53:10 2023
+Results reported at Mon Jan  9 16:53:10 2023
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+
+
+#BSUB -P rna_seq_va
+#BSUB -o rna_seq_variant_call_yli11_2023-01-09/log_files/sam_%J_%I.out -e rna_seq_variant_call_yli11_2023-01-09/log_files/sam_%J_%I.err
+#BSUB -n 1
+#BSUB -q standard
+#BSUB -R "span[hosts=1] rusage[mem=20000]"
+#BSUB -J "sam[1-24]"
+
+#BSUB -w "ended(179055958[*])"
+
+module purge
+
+id=$LSB_JOBINDEX
+COL1=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $1}'`
+COL2=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $2}'`
+COL3=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $3}'`
+COL4=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $4}'`
+COL5=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $5}'`
+COL6=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $6}'`
+COL7=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $7}'`
+COL8=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $8}'`
+COL9=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $9}'`
+LINE=`head -n $id fastq.tsv|tail -n1`
+
+echo ${COL1}
+echo ${COL2}
+echo ${COL3}
+echo ${COL4}
+echo ${COL5}
+echo ${COL6}
+
+ncore=1
+mem=20000
+module load samtools/1.9
+module load bcftools/1.15.1
+cd rna_seq_variant_call_yli11_2023-01-09
+samtools mpileup --uncompressed --output-tags DP,AD -f /home/yli11/Data/Human/hg19/index/samtools_GATK_index/Homo_sapiens.add_chr.GRCh37.dna.primary_assembly.reordered.fa ${COL3}Aligned.sortedByCoord.out.bam | bcftools call --consensus-caller > ${COL3}.samtools.vcf
+vcfutils.pl varFilter -d 10 -p ${COL3}.samtools.vcf > ${COL3}.samtools.filter.vcf
+bcftools +fill-tags ${COL3}.samtools.filter.vcf  -- -t AF > ${COL3}.samtools.final.vcf
+
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   21521.08 sec.
+    Max Memory :                                 422 MB
+    Average Memory :                             258.97 MB
+    Total Requested Memory :                     20000.00 MB
+    Delta Memory :                               19578.00 MB
+    Max Swap :                                   -
+    Max Processes :                              5
+    Max Threads :                                6
+    Run time :                                   21995 sec.
+    Turnaround time :                            24933 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <rna_seq_variant_call_yli11_2023-01-09/log_files/sam_179055960_2.err> for stderr output of this job.
+

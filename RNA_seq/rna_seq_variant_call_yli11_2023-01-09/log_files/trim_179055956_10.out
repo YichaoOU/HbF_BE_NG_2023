@@ -1,0 +1,86 @@
+2515870_DOE16_10_S111_L002_R1_001.fastq.gz
+2515870_DOE16_10_S111_L002_R2_001.fastq.gz
+2515870_DOE16_10_S111_L002
+
+
+
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@noderome161>
+Subject: Job 179055956[10]: <trim[1-24]> in cluster <hpcf_research_cluster> Done
+
+Job <trim[1-24]> was submitted from host <noderome134> by user <yli11> in cluster <hpcf_research_cluster> at Mon Jan  9 09:57:37 2023
+Job was executed on host(s) <2*noderome161>, in queue <standard>, as user <yli11> in cluster <hpcf_research_cluster> at Mon Jan  9 09:57:41 2023
+</home/yli11> was used as the home directory.
+</home/yli11/dirs/Sequencing_runs/weissgrp_286772_RNAseq_total_stranded> was used as the working directory.
+Started at Mon Jan  9 09:57:41 2023
+Terminated at Mon Jan  9 10:17:26 2023
+Results reported at Mon Jan  9 10:17:26 2023
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+
+
+#BSUB -P rna_seq_va
+#BSUB -o rna_seq_variant_call_yli11_2023-01-09/log_files/trim_%J_%I.out -e rna_seq_variant_call_yli11_2023-01-09/log_files/trim_%J_%I.err
+#BSUB -n 2
+#BSUB -q standard
+#BSUB -R "span[hosts=1] rusage[mem=4000]"
+#BSUB -J "trim[1-24]"
+
+
+
+module purge
+
+id=$LSB_JOBINDEX
+COL1=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $1}'`
+COL2=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $2}'`
+COL3=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $3}'`
+COL4=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $4}'`
+COL5=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $5}'`
+COL6=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $6}'`
+COL7=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $7}'`
+COL8=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $8}'`
+COL9=`head -n $id fastq.tsv|tail -n1|awk -F "	" '{print $9}'`
+LINE=`head -n $id fastq.tsv|tail -n1`
+
+echo ${COL1}
+echo ${COL2}
+echo ${COL3}
+echo ${COL4}
+echo ${COL5}
+echo ${COL6}
+
+module load python/3.7.0 fastqc/0.11.5
+ncore=2
+mem=4000
+/home/yli11/HemTools/bin/trim_galore --dont_gzip --paired -j $ncore -o rna_seq_variant_call_yli11_2023-01-09 --basename ${COL3} --clip_R1 6 --clip_R2 6 ${COL1} ${COL2}
+
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   1900.05 sec.
+    Max Memory :                                 2048 MB
+    Average Memory :                             1130.20 MB
+    Total Requested Memory :                     8000.00 MB
+    Delta Memory :                               5952.00 MB
+    Max Swap :                                   -
+    Max Processes :                              9
+    Max Threads :                                12
+    Run time :                                   1184 sec.
+    Turnaround time :                            1189 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <rna_seq_variant_call_yli11_2023-01-09/log_files/trim_179055956_10.err> for stderr output of this job.
+

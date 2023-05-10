@@ -1,0 +1,96 @@
+
+
+#BSUB -P MicroC_yli
+#BSUB -o MicroC_yli11_2022-10-18/log_files/MCC_%J_%I.out -e MicroC_yli11_2022-10-18/log_files/MCC_%J_%I.err
+#BSUB -n 1
+#BSUB -q standard
+#BSUB -R "span[hosts=1] rusage[mem=100000]"
+#BSUB -J "MCC[1-12]"
+
+
+
+module purge
+
+id=$LSB_JOBINDEX
+COL1=`head -n $id input.tsv|tail -n1|awk -F "	" '{print $1}'`
+COL2=`head -n $id input.tsv|tail -n1|awk -F "	" '{print $2}'`
+COL3=`head -n $id input.tsv|tail -n1|awk -F "	" '{print $3}'`
+COL4=`head -n $id input.tsv|tail -n1|awk -F "	" '{print $4}'`
+COL5=`head -n $id input.tsv|tail -n1|awk -F "	" '{print $5}'`
+COL6=`head -n $id input.tsv|tail -n1|awk -F "	" '{print $6}'`
+COL7=`head -n $id input.tsv|tail -n1|awk -F "	" '{print $7}'`
+COL8=`head -n $id input.tsv|tail -n1|awk -F "	" '{print $8}'`
+COL9=`head -n $id input.tsv|tail -n1|awk -F "	" '{print $9}'`
+LINE=`head -n $id input.tsv|tail -n1`
+
+echo ${COL1}
+echo ${COL2}
+echo ${COL3}
+echo ${COL4}
+echo ${COL5}
+echo ${COL6}
+
+ncore=1
+mem=100000
+q=standard
+module load python/2.7.13 fastqc
+module load flash
+module load blat
+src=/home/yli11/Programs/Micro-Capture-C
+mkdir ${COL3}_read_split
+bait_list=`cut -f 4 ${COL4}`
+perl $src/MCC_BLATfa.pl -f ${COL4} -g /home/yli11/Data/Human/hg19/fasta/hg19.fa -o ${COL3}_${COL4}_split_800bp.fa
+mv ${COL3}_${COL4}_split_800bp.fa ${COL3}_read_split
+ln -s $(realpath $COL1) ${COL3}_read_split/
+ln -s $(realpath $COL2) ${COL3}_read_split/
+cd ${COL3}_read_split
+fastqc ${COL1}
+fastqc ${COL2}
+trim_galore --fastqc -q 10 --paired ${COL1} ${COL2} --basename ${COL3}
+flash -f 200 -M 100 -m 10 ${COL3}_val_1.fq.gz ${COL3}_val_2.fq.gz -o ${COL3} 2>&1 | tee ${COL3}_flash.log
+sed -n '1~4s/^@/>/p;2~4p' ${COL3}.extendedFrags.fastq > ${COL3}.extendedFrags.fa
+blat -minScore=20 -minIdentity=5 -maxIntron=10000 -tileSize=11 ${COL3}_${COL4}_split_800bp.fa ${COL3}.extendedFrags.fa ${COL3}.read.psl
+perl $src/MCC_splitter.pl -f ${COL3}.extendedFrags.fastq -p ${COL3}.read.psl -r ./ -limit 0 -all
+module load bowtie2
+module load samtools/1.7
+module load macs2 bedtools
+module load ucsc/041619
+for bait in $bait_list
+do
+bowtie2 -p 1 -X 1000 -x /home/yli11/Data/Human/hg19/index/bowtie2_index/hg19 ${bait}_${COL3}.extendedFrags.fastq -S ${bait}_${COL3}.sam
+samtools view -S -b -o ${bait}_${COL3}.bam ${bait}_${COL3}.sam
+samtools sort ${bait}_${COL3}.bam  -o ${bait}_${COL3}.sorted.bam
+samtools index ${bait}_${COL3}.sorted.bam
+bedtools genomecov -ibam ${bait}_${COL3}.sorted.bam -bg > ${bait}_${COL3}.read_pileup.bdg
+sort -k1,1 -k2,2n ${bait}_${COL3}.read_pileup.bdg > ${bait}_${COL3}.read_pileup.st.bdg
+bedGraphToBigWig ${bait}_${COL3}.read_pileup.st.bdg /home/yli11/Data/Human/hg19/annotations/hg19.chrom.sizes ${bait}_${COL3}.read_pileup.bw
+samtools sort -n -o ${bait}_${COL3}_sort.sam ${bait}_${COL3}.sam
+mv ${bait}_${COL3}_sort.sam ${bait}_${COL3}.sam
+perl $src/MCC_analyser.pl -f ${bait}_${COL3}.sam -pf . -bf /home/yli11/Data/Human/hg19/annotations/hg19.chrom.sizes -genome hg19 -o ${COL3}_${COL4}_split_800bp.fa
+macs2 callpeak -t ${bait}_${COL3}.sorted.bam -f BAM --nomodel --extsize 100 -n ${bait}_${COL3}
+samtools view -S -b -o ${bait}_${COL3}_junction.bam ${bait}_${COL3}_junction.sam
+samtools sort ${bait}_${COL3}_junction.bam  -o ${bait}_${COL3}_junction.st.bam
+samtools index ${bait}_${COL3}_junction.st.bam
+bedtools genomecov -ibam ${bait}_${COL3}_junction.st.bam -bg > ${bait}_${COL3}.junction_pileup.bdg
+sort -k1,1 -k2,2n ${bait}_${COL3}.junction_pileup.bdg > ${bait}_${COL3}.junction_pileup.st.bdg
+bedGraphToBigWig ${bait}_${COL3}.junction_pileup.st.bdg /home/yli11/Data/Human/hg19/annotations/hg19.chrom.sizes ${bait}_${COL3}.junction_pileup.bw
+done
+module load samtools/1.15.1
+module load python/2.7.13 fastqc
+module load flash
+module load blat
+module load bowtie2
+module load macs2 bedtools
+module load ucsc/041619
+label=${COL3}
+bait_bed=${COL4}
+chrom_size=/home/yli11/Data/Human/hg19/annotations/hg19.chrom.sizes
+samtools merge -o ${label}_merged.bam *${label}*sorted.bam
+samtools index ${label}_merged.bam
+mkdir merged_results
+cd merged_results
+samtools sort -n -o ${label}_merged.sam ../${label}_merged.bam
+perl $src/MCC_analyser.pl -f ${label}_merged.sam -pf . -bf $chrom_size -genome hg19 -o ../${label}_${bait_bed}_split_800bp.fa
+cd ..
+mv ${COL3}_read_split MicroC_yli11_2022-10-18
+
