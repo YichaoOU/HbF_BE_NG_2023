@@ -1,6 +1,6 @@
 # Summary
 
-The bam files were generated using the RNA-seq variant calling pipeline here: https://hemtools.readthedocs.io/en/latest/content/NGS_pipelines/rna_seq_variant_call.html. Log files can be found in: `rna_seq_variant_call_yli11_2023-01-09`
+The bam files were generated using the RNA-seq variant calling pipeline here: https://hemtools.readthedocs.io/en/latest/content/NGS_pipelines/rna_seq_variant_call.html. Log files can be found in: `rna_seq_variant_call_yli11_2023-01-09`. The command is `rna_seq_variant_call.py -f fastq.tsv`.
 
 Then the bam files were analyzed using `REDItools`: https://github.com/BioinfoUNIBA/REDItools. Specifically, the first step (`run.lsf`) is:
 
